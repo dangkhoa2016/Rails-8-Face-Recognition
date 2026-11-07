@@ -1,0 +1,15 @@
+production:
+  purge_old_auth_throttles:
+    class: PurgeOldAuthThrottlesJob
+    schedule: every 24 hours
+  purge_expired_submissions:
+    class: PurgeExpiredSubmissionsJob
+    schedule: every 15 minutes
+
+development:
+  purge_old_auth_throttles:
+    class: PurgeOldAuthThrottlesJob
+    schedule: every 24 hours
+  purge_expired_submissions:
+    class: PurgeExpiredSubmissionsJob
+    schedule: every 15 minutes

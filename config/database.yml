@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS", 5) %>
+
+development:
+  <<: *default
+  database: rails8_face_recognition_development
+
+test:
+  <<: *default
+  database: rails8_face_recognition_test
+
+# A single PostgreSQL database holds application tables and Solid Queue tables.
+production:
+  <<: *default
+  url: <%= ENV.fetch("DATABASE_URL") %>

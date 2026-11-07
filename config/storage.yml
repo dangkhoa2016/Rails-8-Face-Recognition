@@ -1,0 +1,26 @@
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
+
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+# Private buckets. Credentials are read on first use, never checked into Git.
+r2_reference:
+  service: S3
+  access_key_id: <%= ENV["R2_ACCESS_KEY_ID"] %>
+  secret_access_key: <%= ENV["R2_SECRET_ACCESS_KEY"] %>
+  region: auto
+  endpoint: <%= ENV["R2_ENDPOINT"] %>
+  force_path_style: true
+  bucket: <%= ENV.fetch("R2_REFERENCE_BUCKET", "compactfaces-reference") %>
+
+r2_submissions:
+  service: S3
+  access_key_id: <%= ENV["R2_ACCESS_KEY_ID"] %>
+  secret_access_key: <%= ENV["R2_SECRET_ACCESS_KEY"] %>
+  region: auto
+  endpoint: <%= ENV["R2_ENDPOINT"] %>
+  force_path_style: true
+  bucket: <%= ENV.fetch("R2_SUBMISSIONS_BUCKET", "compactfaces-submissions") %>
