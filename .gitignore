@@ -1,0 +1,14 @@
+/.bundle
+/config/master.key
+/config/credentials/*.key
+/.env
+/.env.*
+!/.env.example
+/log/*
+/tmp/*
+/storage/*
+/public/assets
+/app/assets/builds/*
+!/app/assets/builds/.keep
+/coverage
+.DS_Store
