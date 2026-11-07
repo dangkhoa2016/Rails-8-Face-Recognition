@@ -1,0 +1,112 @@
+vi:
+  ui:
+    Policy draft saved. Review provenance before approval.: Đã lưu bản nháp chính sách. Hãy kiểm tra nguồn gốc trước khi duyệt.
+    Policy retired.: Đã ngưng sử dụng chính sách.
+    Pose / expression: Tư thế / biểu cảm
+    Preflight is already underway.: Preflight đang được thực hiện.
+    Preflight queued using one authorized Core SOURCE image.: Đã xếp hàng preflight với một ảnh Core SOURCE được cấp phép.
+    Preflight requires a draft profile with enabled model and service.: Preflight cần hồ sơ nháp với mô hình và dịch vụ đang
+      bật.
+    ? Preflight uses a single authorized Core SOURCE reference to pin the server configuration. Generate Missing queues only
+      unencoded SOURCE records for this exact profile.
+    : Preflight dùng một ảnh tham chiếu Core SOURCE được cấp phép để xác nhận cấu hình máy chủ. Generate Missing chỉ đưa các
+      SOURCE chưa có embedding của hồ sơ chính xác này vào hàng đợi.
+    Preprocessing: Tiền xử lý
+    Preview no longer available.: Không còn xem trước được ảnh.
+    Privacy: Quyền riêng tư
+    Privacy & data handling: Quyền riêng tư và xử lý dữ liệu
+    Private: Riêng tư
+    Private data: Dữ liệu riêng tư
+    Private image uploaded. Nothing is enrolled automatically.: Đã tải ảnh riêng tư lên. Không có enrollment tự động.
+    Private uploaded face image: Ảnh khuôn mặt riêng tư đã tải lên
+    Private uploaded image: Ảnh đã tải lên riêng tư
+    Probe samples: Ảnh thăm dò
+    Processing: Đang xử lý
+    Processing failed: Xử lý thất bại
+    Profile: Hồ sơ
+    Profile vectors: Vector theo hồ sơ
+    Provenance: Nguồn gốc
+    Provenance note (optional): Ghi chú nguồn gốc (tùy chọn)
+    Purpose and access: Mục đích và quyền truy cập
+    Queue only missing SOURCE embedding requests for this profile? Inference may incur GPU cost.: Chỉ xếp hàng các yêu cầu
+      embedding SOURCE còn thiếu cho hồ sơ này? Inference có thể phát sinh chi phí GPU.
+    Queuing…: Đang xếp hàng…
+    ? Rails calls a server-side authenticated Modal embedding endpoint. PostgreSQL/pgvector keeps model and dimension profiles
+      separate; private Cloudflare R2 stores reference and uploaded images.
+    : Rails gọi endpoint embedding Modal có xác thực trên máy chủ. PostgreSQL/pgvector lưu hồ sơ theo từng mô hình và số chiều;
+      Cloudflare R2 riêng tư lưu ảnh tham chiếu và ảnh người dùng tải lên.
+    Rails request digest: Mã băm yêu cầu Rails
+    Read privacy policy →: Đọc chính sách quyền riêng tư →
+    Recent attempts: Các lần thử gần đây
+    Recent embedding profiles: Các hồ sơ embedding gần đây
+    Recent recognition activity: Hoạt động nhận diện gần đây
+    Recognition deactivated; embedding caches remain available.: Đã tắt nhận diện; cache embedding vẫn có thể sử dụng.
+    Recognition disabled.: Nhận diện đang bị tắt.
+    Recognition history: Lịch sử nhận diện
+    Recognition input image: Ảnh đầu vào nhận diện
+    Recognition is unavailable until calibration and enrollment approval.: Nhận diện chưa khả dụng tới khi hiệu chuẩn và phê
+      duyệt enrollment.
+    Recognition is unavailable.: Chức năng nhận diện chưa khả dụng.
+    Recognition policies: Chính sách nhận diện
+    Recognition policy: Chính sách nhận diện
+    Recognition request queued.: Đã đưa yêu cầu nhận diện vào hàng đợi.
+    Recognition requests: Yêu cầu nhận diện
+    Recognition result removed.: Đã xóa kết quả nhận diện.
+    Recognize selected sample: Nhận diện ảnh mẫu đã chọn
+    Reference data remains separate from expiring user submissions; image previews require authorization.: Dữ liệu tham chiếu
+      được tách khỏi ảnh người dùng có hạn lưu; việc xem ảnh cần được cấp quyền.
+    Reference images: Ảnh tham chiếu
+    Reference source URL: URL nguồn tham chiếu
+    ? Register a dataset snapshot, configure the local dataset root and verify its integrity before enrolling 120 Core SOURCE
+      images.
+    : Đăng ký snapshot, cấu hình thư mục dữ liệu cục bộ và xác minh tính toàn vẹn trước khi enrollment 120 ảnh Core SOURCE.
+    Register an embedding model: Khai báo mô hình embedding
+    Register an inference service and verify its model IDs and supported dimensions.: Thêm dịch vụ suy luận và xác minh ID
+      mô hình cùng các số chiều được hỗ trợ.
+    Register dataset source: Khai báo nguồn dữ liệu
+    Register evaluation policy: Thêm chính sách đánh giá
+    Register model: Thêm mô hình
+    Register policy: Thêm chính sách
+    Register policy →: Thêm chính sách →
+    Register snapshot: Khai báo snapshot
+    ? Register, verify and import a pinned CompactFaces snapshot. All 935 file checksums and 187 five-slot identity groups
+      are verified before image records are imported.
+    : Khai báo, xác minh và nhập snapshot CompactFaces cố định. Kiểm tra checksum của 935 tệp và 187 nhóm định danh (mỗi nhóm
+      năm ảnh) trước khi nhập bản ghi ảnh.
+    Registered models: Các mô hình đã khai báo
+    ? Registration stores your email and a password hash. Verification and password-reset links are short-lived, email delivery
+      is managed by the configured transactional provider, and login attempts are throttled using hashed IP/account fingerprints.
+      Admins may suspend accounts and revoke sessions. Your temporary uploads can be removed from Reset test data.
+    : Khi đăng ký, hệ thống lưu email và mật khẩu dưới dạng mã băm. Liên kết xác minh/đặt lại mật khẩu có thời hạn ngắn; việc
+      gửi email do nhà cung cấp giao dịch được cấu hình đảm nhiệm; yêu cầu đăng nhập bị giới hạn dựa trên dấu vân tay IP/tài
+      khoản đã băm. Admin có thể tạm khóa tài khoản và thu hồi phiên. Bạn có thể xóa ảnh tạm thời trong mục Đặt lại dữ liệu
+      thử nghiệm.
+    Remove this recognition result from your history?: Xóa kết quả nhận diện này khỏi lịch sử của bạn?
+    Report SHA-256: SHA-256 báo cáo
+    Request: Yêu cầu
+    Requires complete coverage and approved policy: Cần đủ vector tham chiếu và chính sách được duyệt
+    Research: Nghiên cứu
+    Research / Acceptable use: Nghiên cứu / Quy định sử dụng
+    Research / Transparency: Nghiên cứu / Minh bạch
+    Research use; not verified biometric evidence: Chỉ dành cho nghiên cứu; không phải bằng chứng sinh trắc học đã xác thực
+    Reset: Đặt lại
+    Respect uncertainty.: Tôn trọng sự không chắc chắn.
+    Restricted access: Quyền truy cập hạn chế
+    Result details: Chi tiết kết quả
+    ? Results are experimental and should not support access control, employment, attendance, legal or other high-impact decisions.
+      An "Unknown" decision means evidence did not satisfy the selected gallery policy, not that the person is unknown in
+      the real world.
+    : Kết quả mang tính thử nghiệm và không được dùng cho kiểm soát ra vào, tuyển dụng, chấm công, pháp lý hoặc quyết định
+      quan trọng khác. Kết luận "Unknown" có nghĩa là bằng chứng không đạt chính sách thư viện đang chọn, không khẳng định
+      người đó vô danh trong thực tế.
+    Retire policy: Ngưng sử dụng chính sách
+    Retire this policy? Active policies must be deactivated first.: Ngưng sử dụng chính sách này? Cần tắt chính sách đang
+      hoạt động trước.
+    Review actions: Thao tác đánh giá
+    ? Review and delete your own image submissions. Images expire 24 hours after upload and are never added to the Core enrollment
+      gallery.
+    : Xem và xóa ảnh bạn đã tải lên. Ảnh hết hạn sau 24 giờ và không được thêm vào thư viện Core enrollment.
+    Review sources →: Xem nguồn →
+    Review →: Kiểm tra →
+    Revision: Phiên bản checkpoint
+    Role: Vai trò
