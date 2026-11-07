@@ -1,0 +1,18 @@
+vi:
+  dataset_setup:
+    not_configured: "Chưa cấu hình thư mục dataset. Hãy thực hiện các bước bên dưới trên máy chạy Rails; không thể thiết lập trực tiếp từ trình duyệt."
+    metadata_missing: "Thư mục dataset chưa truy cập được hoặc thiếu metadata.csv. Hãy kiểm tra DATASET_IMPORT_ROOT trên máy chủ."
+    invalid_root: "Đã đặt DATASET_IMPORT_ROOT nhưng thư mục hoặc metadata.csv không có sẵn:"
+    ready: "Đã tìm thấy thư mục dataset và metadata.csv (chưa xác minh tính toàn vẹn của 935 ảnh):"
+    guide_title: "Cách cấu hình thư mục dataset"
+    introduction: "Đây là biến môi trường phía máy chủ, không phải trường nhập trong Rails Admin. Source URL phía trên chỉ lưu nguồn gốc, không tự tải tập tin."
+    download_title: "Tải snapshot được phép sử dụng về máy chạy Rails"
+    download_note: "Cài Hugging Face CLI (hf) nếu chưa có. Đặt ảnh bên ngoài repository Git."
+    verify_title: "Kiểm tra metadata và đầy đủ 935 ảnh PNG"
+    verify_note: "Số ảnh cần là 935. Sau khi bấm Verify and import, importer sẽ kiểm tra SHA-256, định dạng và kích thước từng ảnh."
+    env_title: "Đặt biến môi trường khi khởi động Rails và background worker"
+    env_note: "Ví dụ dùng bin/dev để chạy web, CSS và Solid Queue. Nếu Puma và Solid Queue chạy riêng, phải đặt biến này cho CẢ HAI tiến trình rồi khởi động lại. Chỉ sửa .env.example không tự áp dụng cấu hình."
+    finish_title: "Tải lại trang và chọn Verify and import"
+    finish_note: "Nút sẽ khả dụng khi thư mục chứa metadata.csv. Nhập dữ liệu chạy qua background job, không dùng GPU của model."
+    privacy_note: "Vì lý do an toàn, biểu mẫu không nhận đường dẫn hệ thống bất kỳ hoặc tự tải URL. Người quản trị máy chủ phải đặt snapshot và cấu hình biến môi trường."
+    dataset_link: "Mở dataset CompactFaces trên Hugging Face"

@@ -1,0 +1,114 @@
+vi:
+  ui:
+    (not independently verified): (chưa xác minh độc lập)
+    + New unknown test: + Thử Unknown mới
+    . It does not become verified_unknown automatically, even if the model returns a Core candidate.: . Ảnh không tự động
+      thành verified_unknown ngay cả khi mô hình đưa ra ứng viên Core.
+    . No identity decision was made.: . Chưa có kết luận về định danh.
+    / Workflow: / Quy trình
+    01 / Dataset: 01 / Bộ dữ liệu
+    02 / Inference: 02 / Suy luận
+    03 / Calibration: 03 / Hiệu chuẩn
+    04 / Limits: 04 / Giới hạn
+    120 enrolled Core identities: 120 định danh Core đã enrollment
+    ? A bounded 1:N identification demonstration using the CompactFaces synthetic dataset. Provenance and file integrity do
+      not prove biometric identity consistency.
+    : Bản demo nhận diện 1:N có phạm vi giới hạn trên dữ liệu tổng hợp CompactFaces. Nguồn gốc và tính toàn vẹn tệp không
+      chứng minh tính nhất quán của định danh sinh trắc học.
+    ? A concise operational description of this research application, not a substitute for a jurisdiction-specific legal privacy
+      notice.
+    : Mô tả ngắn cách vận hành ứng dụng nghiên cứu, không thay thế thông báo pháp lý về quyền riêng tư phù hợp với từng khu
+      vực pháp lý.
+    ? A draft may be saved without full provenance, but approval requires threshold, manifest, report SHA and reviewer. No
+      recognition may be activated using an unapproved policy.
+    : Có thể lưu bản nháp khi chưa đủ thông tin nguồn gốc, nhưng phê duyệt cần ngưỡng, manifest, SHA báo cáo và người đánh
+      giá. Không được kích hoạt nhận diện bằng chính sách chưa duyệt.
+    ? A new profile starts in Draft. Preflight confirms the server's config hash and revision before any bulk generation.
+      No vectors are truncated to simulate a different dimension.
+    : Hồ sơ mới bắt đầu ở trạng thái Nháp. Preflight xác nhận mã băm cấu hình và phiên bản từ máy chủ trước khi tạo hàng loạt.
+      Không cắt vector để giả lập số chiều khác.
+    ? A privacy-first workspace for experimental 1:N face identification across 120 synthetic Core identities, model-specific
+      embedding profiles and explicit unknown rejection.
+    : Không gian ưu tiên quyền riêng tư để thử nghiệm nhận diện khuôn mặt 1:N trên 120 định danh Core tổng hợp, với hồ sơ
+      embedding riêng từng mô hình và cơ chế từ chối Unknown minh bạch.
+    ? A profile is an immutable model + dimension + checkpoint revision + preprocessing + instruction configuration. Switching
+      back reuses its stored embeddings.
+    : Hồ sơ là cấu hình bất biến gồm mô hình, số chiều, phiên bản checkpoint, tiền xử lý và chỉ dẫn. Chuyển lại hồ sơ cũ sẽ
+      tái sử dụng embedding đã lưu.
+    A successful preflight is required first.: Cần hoàn thành preflight thành công trước.
+    API model identifier: Mã mô hình API
+    About: Giới thiệu
+    Activate a profile only after 120/120 SOURCE embeddings are ready and an independent evaluation policy has been approved.: Chỉ
+      kích hoạt hồ sơ khi đủ 120/120 embedding SOURCE và chính sách đánh giá độc lập đã được phê duyệt.
+    Activate profile: Kích hoạt hồ sơ
+    Activate this fully enrolled profile with its approved threshold?: Kích hoạt hồ sơ đã enrollment đầy đủ với ngưỡng được
+      phê duyệt?
+    Active: Đang hoạt động
+    Active Core identities: Các định danh Core đang hoạt động
+    Active configuration: Cấu hình đang sử dụng
+    Active dimension: Số chiều đang sử dụng
+    Active profile changed. All other embeddings remain intact.: Đã thay hồ sơ đang hoạt động. Mọi embedding khác vẫn được
+      giữ nguyên.
+    Active recognition: Nhận diện đang hoạt động
+    Actor: Người thực hiện
+    ? Add a public HTTPS service and configure a server-side token. Explicitly allowlist its hostname before connectivity
+      checks.
+    : Thêm dịch vụ HTTPS công khai và cấu hình token trên máy chủ. Phải đưa hostname vào danh sách cho phép trước khi kiểm
+      tra kết nối.
+    Add inference service: Thêm dịch vụ suy luận
+    Add service: Thêm dịch vụ
+    Additional · unknown probes: Additional · ảnh thăm dò ngoài gallery
+    Admin-provided authorized unknown probe: Ảnh thử Unknown được admin cấp phép
+    Administration: Quản trị
+    Administration / Calibration evidence: Quản trị / Bằng chứng hiệu chuẩn
+    Administration / Configuration: Quản trị / Cấu hình
+    Administration / Data: Quản trị / Dữ liệu
+    Administration / Dataset: Quản trị / Bộ dữ liệu
+    Administration / Decisions: Quản trị / Quyết định
+    'Administration / Embedding profile #': 'Quản trị / Hồ sơ embedding #'
+    Administration / Governance: Quản trị / Kiểm soát
+    Administration / Identity: Quản trị / Định danh
+    Administration / Infrastructure: Quản trị / Hạ tầng
+    Administration / Manual QA: Quản trị / Kiểm thử thủ công
+    Administration / Models: Quản trị / Mô hình
+    Administration / New snapshot: Quản trị / Snapshot mới
+    Administration / Overview: Quản trị / Tổng quan
+    'Administration / Policy #': 'Quản trị / Chính sách #'
+    Administration / Unknown probe: Quản trị / Ảnh thử Unknown
+    Administration / Vector configuration: Quản trị / Cấu hình vector
+    Administrative changes are recorded without storing raw secrets, uploaded image bytes or embedding vectors.: Các thay
+      đổi quản trị được ghi nhật ký mà không lưu khóa bí mật thô, byte ảnh tải lên hay vector embedding.
+    All: Tất cả
+    All collections: Tất cả bộ ảnh
+    All profiles →: Xem mọi hồ sơ →
+    All slots: Tất cả vị trí
+    ? Allowlisted HTTPS endpoints and secret references. Raw bearer tokens are never stored in these records or displayed
+      in the browser.
+    : Endpoint HTTPS trong danh sách cho phép và tham chiếu bí mật. Bearer token thô không được lưu trong bản ghi hay hiển
+      thị trên trình duyệt.
+    ? An "Unknown" result indicates insufficient evidence under the approved gallery threshold. A cosine score is not a probability,
+      and this app does not automatically verify single-face images.
+    : Kết quả "Unknown" cho biết bằng chứng không đạt ngưỡng của thư viện được duyệt. Điểm cosine không phải xác suất và ứng
+      dụng không tự động xác minh ảnh đơn khuôn mặt.
+    Apply filters: Áp dụng bộ lọc
+    ? Approval affirms that the externally evaluated threshold has been reviewed for the exact model, revision and dimension.
+      It does not automatically activate recognition.
+    : Việc phê duyệt xác nhận ngưỡng đánh giá độc lập đã được kiểm tra cho đúng mô hình, phiên bản và số chiều, nhưng không
+      tự động kích hoạt nhận diện.
+    Approve policy: Phê duyệt chính sách
+    Approved by / at: Người duyệt / thời điểm
+    'Approved policy #': 'Chính sách đã duyệt #'
+    'Attempt #': 'Lần thử #'
+    Audit events: Nhật ký quản trị
+    Authorized dataset sample: Ảnh mẫu được cấp phép
+    Authorized face image: Ảnh khuôn mặt được cấp phép
+    ? Authorized image bytes are sent to the separately deployed inference endpoint configured by the administrator. Authentication
+      tokens remain server-side. Private object previews use authenticated controller responses with no-store headers. Operational
+      access is restricted by role.
+    : Byte ảnh được cấp phép sẽ gửi đến endpoint suy luận độc lập do quản trị viên cấu hình. Token xác thực chỉ lưu trên máy
+      chủ. Xem trước ảnh riêng tư qua controller có xác thực và header no-store. Quyền quản trị giới hạn theo vai trò.
+    Authorized images only: Chỉ sử dụng ảnh được cấp phép
+    ? Authorized manual probes outside the Core enrollment directory. An asserted unknown label is an operator claim, not
+      verified ground truth or a quality benchmark.
+    : Các ảnh thăm dò thủ công được cấp phép nằm ngoài thư mục Core enrollment. Nhãn asserted_unknown chỉ là nhận định của
+      người vận hành, không phải ground truth đã xác minh hay benchmark chất lượng.
