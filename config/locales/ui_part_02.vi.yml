@@ -1,0 +1,113 @@
+vi:
+  ui:
+    Automatically eligible for deletion after 24 hours.: Ảnh đủ điều kiện tự động xóa sau 24 giờ.
+    Available probes: Ảnh thăm dò có sẵn
+    Awaiting preflight: Đang chờ preflight
+    Background queue unavailable; import was not scheduled.: Hàng đợi nền không khả dụng; chưa lên lịch nhập.
+    Background queue unavailable; preflight was not scheduled.: Hàng đợi nền không khả dụng; chưa lên lịch preflight.
+    Browse sample gallery →: Duyệt thư viện ảnh mẫu →
+    Built for careful recognition research: Được xây dựng cho nghiên cứu nhận diện thận trọng
+    Calibrated cosine threshold: Ngưỡng cosine đã hiệu chuẩn
+    Call the configured Modal service with one Core SOURCE image to verify pinned metadata?: Gọi dịch vụ Modal đã cấu hình
+      với một ảnh Core SOURCE để kiểm tra metadata cố định?
+    Cancel: Hủy
+    'Candidate:': 'Ứng viên:'
+    Change this identity's active status? This will affect gallery coverage.: Thay đổi trạng thái định danh này? Việc này
+      ảnh hưởng độ bao phủ thư viện.
+    ? Changes to the service URL should be reviewed carefully. Existing embedding profiles retain their original pinned model
+      and configuration identifiers.
+    : Cần xem xét kỹ khi thay URL dịch vụ. Hồ sơ embedding hiện có giữ nguyên mã mô hình và cấu hình đã cố định.
+    ? Changing from 1024D → 4096D → 1024D never deletes the original 1024D cache. When already complete, activating the old
+      profile requires no extra enrollment inference calls.
+    : Chuyển từ 1024D sang 4096D rồi về 1024D không xóa cache 1024D ban đầu; nếu đã đầy đủ, kích hoạt hồ sơ cũ không cần gọi
+      inference bổ sung.
+    Changing model capabilities does not rewrite or delete vectors tied to old immutable profiles.: Thay đổi khả năng mô hình
+      không ghi đè hoặc xóa các vector thuộc hồ sơ bất biến trước đó.
+    Check gateway: Kiểm tra gateway
+    Checkpoint revision: Phiên bản checkpoint
+    Choose a licensed synthetic sample or upload an image you have permission to process.: Chọn một ảnh tổng hợp có giấy phép
+      hoặc tải lên ảnh bạn được phép xử lý.
+    Choose a profile: Chọn hồ sơ
+    ? Choose a synthetic sample or a privately uploaded, pre-cropped image. The active model and policy are snapshotted for
+      each request.
+    : Chọn ảnh tổng hợp hoặc ảnh riêng tư đã cắt khuôn mặt. Mô hình và chính sách đang kích hoạt được chụp lại theo từng yêu
+      cầu.
+    Choose model: Chọn mô hình
+    Choose your image: Chọn ảnh của bạn
+    Claimed ground truth: Nhãn thực tế được khai báo
+    Clear: Xóa lọc
+    Collection: Bộ sưu tập
+    ? CompactFaces imagery carries separate non-commercial licensing restrictions. The Rails code is MIT-licensed, and upstream
+      model licenses remain in effect. Review dataset attribution and provenance before use.
+    : Ảnh CompactFaces có những hạn chế giấy phép phi thương mại riêng. Mã Rails theo MIT, còn giấy phép mô hình nguồn vẫn
+      có hiệu lực. Hãy kiểm tra việc ghi công và nguồn gốc bộ dữ liệu trước khi sử dụng.
+    CompactFaces · Synthetic identity research: CompactFaces · Nghiên cứu định danh tổng hợp
+    Completed enrollments: Enrollment đã hoàn thành
+    Configuration changes and import actions will appear here after they occur.: Những thay đổi cấu hình và thao tác nhập
+      dữ liệu sẽ xuất hiện tại đây.
+    Configuration snapshot: Bản chụp cấu hình
+    Configured on server: Đã cấu hình trên máy chủ
+    Confirm you reviewed this external report, dataset split, threshold and model configuration?: Xác nhận đã kiểm tra báo
+      cáo bên ngoài, cách chia dữ liệu, ngưỡng và cấu hình mô hình?
+    Confirmed config SHA-256: SHA-256 cấu hình đã xác nhận
+    ? Core P1/P2/E1/E2 and Additional samples are query probes, never enrollment references. All photos require the dataset
+      publisher's attribution.
+    : Các ảnh Core P1/P2/E1/E2 và Additional chỉ dùng làm truy vấn thử, không phải ảnh enrollment. Mọi ảnh đều phải ghi công
+      nhà phát hành bộ dữ liệu.
+    Core and Additional data: Dữ liệu Core và Additional
+    Core identities: Định danh Core
+    Core variants and Additional identities: Các biến thể Core và định danh Additional
+    Core · known probes: Core · ảnh thăm dò đã biết
+    Cosine similarity is not a percentage probability.: Độ tương đồng cosine không phải phần trăm xác suất.
+    ? Cosine similarity is not a probability. Every threshold needs a reviewed evaluation report from an independent notebook.
+      Without an approved policy and complete gallery, recognition is disabled.
+    : Độ tương đồng cosine không phải xác suất. Mọi ngưỡng đều cần báo cáo đánh giá độc lập đã được kiểm tra. Không có chính
+      sách được duyệt và thư viện đầy đủ thì chức năng nhận diện bị vô hiệu hóa.
+    Cosine threshold is not an accuracy percentage and must not be transferred between profiles.: Ngưỡng cosine không phải
+      tỷ lệ phần trăm chính xác và không được dùng chung giữa các hồ sơ.
+    Coverage: Độ bao phủ
+    Create a server-side HTTP connection definition without exposing bearer secrets.: Tạo cấu hình kết nối HTTP trên máy chủ
+      mà không lộ bearer token.
+    Create an unknown-case probe: Tạo ảnh thử trường hợp Unknown
+    Create or reuse a profile: Tạo hoặc tái sử dụng hồ sơ
+    Create profile: Tạo hồ sơ
+    Created: Ngày tạo
+    Credits and license boundaries: Ghi công và ranh giới giấy phép
+    Currently active: Đang được kích hoạt
+    Custom instruction (Qwen only; optional): Chỉ dẫn tùy chỉnh (chỉ Qwen; tùy chọn)
+    DATASET_IMPORT_ROOT is not configured on the server.: Chưa cấu hình DATASET_IMPORT_ROOT trên máy chủ.
+    DATASET_IMPORT_ROOT is not configured. The server operator must stage a dataset snapshot before importing.: Chưa cấu hình
+      DATASET_IMPORT_ROOT. Người quản trị cần đưa snapshot dữ liệu lên máy chủ trước khi nhập.
+    Dashboard: Bảng điều khiển
+    Dataset activity: Hoạt động nhập dữ liệu
+    Dataset and model attribution: Nguồn bộ dữ liệu và mô hình
+    Dataset attribution: Nguồn bộ dữ liệu
+    Dataset images: Ảnh bộ dữ liệu
+    Dataset imports: Nhập bộ dữ liệu
+    ? Dataset references and private submissions are tracked separately. Only active Core SOURCE records can enter the recognition
+      gallery.
+    : Ảnh tham chiếu và ảnh riêng tư được quản lý riêng. Chỉ bản ghi Core SOURCE đang hoạt động được vào thư viện nhận diện.
+    Dataset slot: Vị trí trong bộ dữ liệu
+    Dataset source: Nguồn bộ dữ liệu
+    Dataset verification queued.: Đã đưa yêu cầu xác minh dữ liệu vào hàng đợi.
+    Deactivate recognition: Tắt nhận diện
+    Deactivate recognition before retiring its active policy.: Hãy tắt nhận diện trước khi ngưng sử dụng chính sách đang hoạt
+      động.
+    Decision: Kết luận
+    Decision margin: Biên quyết định
+    Declare the exact API identifier and supported dimensions advertised by the deployed inference service.: Khai báo chính
+      xác mã API và số chiều mà dịch vụ suy luận đã triển khai công bố.
+    Delete: Xóa
+    Delete image and related data: Xóa ảnh và dữ liệu liên quan
+    Delete test and records: Xóa dữ liệu thử nghiệm
+    Delete this private image, all embeddings and all recognition attempts for it?: Xóa ảnh riêng tư, tất cả embedding và
+      các lần nhận diện liên quan?
+    Delete this result: Xóa kết quả này
+    Details: Chi tiết
+    Dimension: Số chiều
+    Dimension / revision: Số chiều / phiên bản
+    Disable identity: Vô hiệu hóa định danh
+    Disable new recognition requests? Existing vectors remain stored.: Tắt yêu cầu nhận diện mới? Các vector hiện có vẫn được
+      lưu.
+    Disabling an identity removes it from new recognition queries, but does not delete its reference images or cached vectors.: Vô
+      hiệu hóa định danh sẽ loại định danh đó khỏi các truy vấn nhận diện mới mà không xóa ảnh tham chiếu hoặc vector đã lưu.
