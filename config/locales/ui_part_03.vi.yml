@@ -1,0 +1,112 @@
+vi:
+  ui:
+    ? Each Core identity has one SOURCE reference image and four held-out pose/expression probes. A separate Additional collection
+      provides 67 identities that are never enrolled. The full dataset contains 935 synthetic PNGs.
+    : Mỗi định danh Core có một ảnh SOURCE tham chiếu và bốn ảnh biến thể tư thế/biểu cảm dành cho kiểm thử. Bộ Additional
+      gồm 67 định danh không bao giờ được enrollment. Toàn bộ dữ liệu có 935 ảnh PNG tổng hợp.
+    Each model, revision, instruction, preprocessing version and dimension has an independent embedding cache.: Mỗi mô hình,
+      revision, instruction, phiên bản tiền xử lý và số chiều có cache embedding độc lập.
+    Edit configuration: Sửa cấu hình
+    Edit model settings →: Sửa cài đặt mô hình →
+    Eligible for Generate Missing: Có thể tạo bằng Generate Missing
+    Embedding dimensions: Số chiều embedding
+    Embedding models: Mô hình embedding
+    Embedding profiles: Hồ sơ embedding
+    Enable a verified model and create a pinned embedding profile to begin preparing Core SOURCE vectors.: Kích hoạt mô hình
+      đã xác minh và tạo hồ sơ embedding cố định để chuẩn bị vector Core SOURCE.
+    Enable identity: Kích hoạt định danh
+    Enable this model for new embedding profiles: Cho phép sử dụng model để tạo hồ sơ embedding mới
+    Enable this service for inference calls: Bật dịch vụ để gọi suy luận
+    Enabled model: Mô hình đã bật
+    Enrollment coverage: Mức độ đầy đủ của enrollment
+    Enrollment status: Trạng thái enrollment
+    Enter only the ENV variable name, never the actual token.: Chỉ nhập tên biến môi trường, không nhập token thật.
+    Environment variable name: Tên biến môi trường
+    'Error category:': 'Loại lỗi:'
+    'Error category: . No identity decision was made.': 'Loại lỗi: . Chưa có kết luận định danh.'
+    Evaluation manifest reference: Tham chiếu manifest đánh giá
+    Evaluation policy: Chính sách đánh giá
+    Evaluation report SHA-256: SHA-256 báo cáo đánh giá
+    Event: Sự kiện
+    Evidence: Bằng chứng
+    Evidence-led results: Kết quả dựa trên bằng chứng
+    ? Exact configurations are deduplicated. A new profile is created only when model, dimension, revision, preprocessing
+      or instruction differs.
+    : Cấu hình giống hệt sẽ được dùng lại. Chỉ tạo hồ sơ mới khi khác mô hình, số chiều, phiên bản, tiền xử lý hoặc chỉ dẫn.
+    Exact embedding profile: Hồ sơ embedding chính xác
+    Exact pinned configuration. Existing vectors are always stored under this profile and cannot be rewritten in place.: Cấu
+      hình được cố định chính xác. Các vector hiện có luôn thuộc hồ sơ này và không được ghi đè.
+    Exactly one SOURCE enrollment per identity: Mỗi định danh có đúng một ảnh SOURCE enrollment
+    'Examples: [1024,2048,4096] or {"min":64,"max":4096}. Always confirm capability against /v1/models.': 'Ví dụ: [1024,2048,4096]
+      hoặc {"min":64,"max":4096}. Luôn xác nhận khả năng hỗ trợ qua /v1/models.'
+    Existing profile reused if exact configuration matched. No embeddings were removed.: Đã tái sử dụng hồ sơ nếu cấu hình
+      trùng khớp chính xác. Không có embedding nào bị xóa.
+    'Expected: 120 Core identities': 'Dự kiến: 120 định danh Core'
+    'Expected: 935 source PNGs': 'Dự kiến: 935 ảnh PNG nguồn'
+    Expired or unavailable: Đã hết hạn hoặc không khả dụng
+    Expires: Hết hạn lúc
+    Expiry: Hết hạn
+    Explore / Synthetic faces: Khám phá / Ảnh tổng hợp
+    Explore Core and Additional pose/expression probes supplied by the dataset.: Khám phá các ảnh biến thể tư thế/biểu cảm
+      Core và Additional từ bộ dữ liệu.
+    Explore samples →: Khám phá ảnh mẫu →
+    External GPU, local decisions: GPU bên ngoài, quyết định tại ứng dụng
+    ? Face detection, alignment, multiple faces and camera capture are not supported in this workflow. Qwen and WeMM are multimodal
+      embedding models, not yet proven specialist face-recognition systems.
+    : Quy trình này không hỗ trợ phát hiện/căn chỉnh khuôn mặt, nhiều khuôn mặt hoặc chụp camera. Qwen và WeMM là mô hình
+      embedding đa phương thức, chưa được chứng minh là hệ thống chuyên nhận diện khuôn mặt.
+    Face image: Ảnh khuôn mặt
+    Face images: Ảnh khuôn mặt
+    Failed embedding requests: Yêu cầu embedding thất bại
+    Failed requests: Yêu cầu thất bại
+    Files verified: Tệp đã kiểm tra
+    First verify and import the CompactFaces dataset; identity creation is deliberately not available from this page.: Hãy
+      xác minh và nhập dữ liệu CompactFaces trước; trang này không cho tạo định danh trực tiếp.
+    Gateway: Cổng suy luận
+    Generate missing: Tạo các vector còn thiếu
+    HTTPS gateway base URL: URL gateway HTTPS
+    Host-only URL. Runtime checks require INFERENCE_ALLOWED_HOSTS; private addresses and redirects are rejected.: URL chỉ
+      chứa hostname. Khi chạy cần INFERENCE_ALLOWED_HOSTS; các địa chỉ private và chuyển hướng sẽ bị từ chối.
+    How it works: Cách hoạt động
+    How the pipeline works: Cách quy trình vận hành
+    I confirm I own this image or have all necessary rights and consent to upload and process it for this research comparison.: Tôi
+      xác nhận sở hữu ảnh này hoặc có đầy đủ quyền và sự đồng ý cần thiết để tải lên và xử lý phục vụ so sánh nghiên cứu.
+    I confirm that this image may legally be processed and that any required consent has been obtained.: Tôi xác nhận ảnh
+      này được phép xử lý hợp pháp và đã có sự đồng ý cần thiết.
+    Identity: Định danh
+    Identity research workspace: Không gian nghiên cứu định danh
+    Identity status updated.: Đã cập nhật trạng thái định danh.
+    Image: Ảnh
+    Image has expired or is unavailable.: Ảnh đã hết hạn hoặc không khả dụng.
+    Image not available: Ảnh không khả dụng
+    Image unavailable: Ảnh không khả dụng
+    Images imported: Số ảnh đã nhập
+    Images stored: Số ảnh đã lưu
+    Immediate manual deletion from My submissions.: Bạn có thể xóa ngay trong mục Ảnh tôi đã tải lên.
+    Immutable image identity and embedding cache associations.: Định danh ảnh và quan hệ cache embedding bất biến.
+    Immutable profiles: Hồ sơ bất biến
+    Immutable report/manifest reference: Tham chiếu báo cáo/manifest bất biến
+    'Import #': 'Lần nhập #'
+    Import a verified external evaluation report and register its decision threshold for the exact embedding profile.: Nhập
+      báo cáo đánh giá độc lập đã xác minh và khai báo ngưỡng cho đúng hồ sơ embedding.
+    Import actions: Thao tác nhập
+    Import is already running.: Quy trình nhập đang chạy.
+    Import registered. Validate the local dataset snapshot before importing.: Đã khai báo lần nhập. Hãy xác minh snapshot
+      dữ liệu cục bộ trước khi nhập.
+    Inactive: Chưa kích hoạt
+    Indeterminate: Chưa đủ bằng chứng
+    Inference and security: Suy luận và bảo mật
+    Inference request timeout (seconds): Thời hạn yêu cầu inference (giây)
+    Inference service: Dịch vụ suy luận
+    Inference service saved. Secrets stay in the server environment.: Đã lưu dịch vụ suy luận. Bí mật vẫn chỉ lưu trên môi
+      trường máy chủ.
+    Inference service updated.: Đã cập nhật dịch vụ suy luận.
+    Inference services: Dịch vụ suy luận
+    Input image is no longer available.: Ảnh đầu vào không còn khả dụng.
+    Input image ·: Ảnh đầu vào ·
+    Inspect approved policy →: Xem chính sách đã phê duyệt →
+    Inspect →: Xem →
+    Instruction: Chỉ dẫn
+    Known acquisition/authorization context; do not include personal identifiers: Nguồn gốc/quyền sử dụng đã biết; không đưa
+      thông tin định danh cá nhân
+    Label: Nhãn
