@@ -1,0 +1,6 @@
+inherit_gem:
+  rubocop-rails-omakase: rubocop.yml
+
+# Consistent compact Ruby array literals throughout app code, migrations and tests.
+Layout/SpaceInsideArrayLiteralBrackets:
+  EnforcedStyle: no_space

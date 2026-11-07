@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+set -e
+bundle install
+bin/rails db:prepare
+bin/rails tailwindcss:build
+printf 'Ready. Run bin/dev (or bundle exec foreman start -f Procfile.dev).\n'
