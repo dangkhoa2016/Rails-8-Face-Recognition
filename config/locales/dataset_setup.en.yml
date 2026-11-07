@@ -1,0 +1,18 @@
+en:
+  dataset_setup:
+    not_configured: "Dataset directory not configured. Follow the steps below on the Rails server; this cannot be set from the browser."
+    metadata_missing: "The dataset directory is not available or metadata.csv is missing. Check DATASET_IMPORT_ROOT on the server."
+    invalid_root: "DATASET_IMPORT_ROOT is set, but the folder or metadata.csv is unavailable:"
+    ready: "Dataset directory found and metadata.csv is present (935-image integrity is not yet verified):"
+    guide_title: "How to configure the dataset directory"
+    introduction: "This is a server-side environment variable, not a field in Rails Admin. The Source URL above records provenance only; it does not download files."
+    download_title: "Download the authorized snapshot to the Rails host"
+    download_note: "Install the Hugging Face CLI (hf) if needed. Keep images outside the Git repository."
+    verify_title: "Check that metadata and all 935 PNG files exist"
+    verify_note: "The count should be 935. After you click Verify and import, the importer validates SHA-256, image format and dimensions."
+    env_title: "Set the variable when starting Rails and its background worker"
+    env_note: "The example starts the web server, CSS and Solid Queue with bin/dev. If Puma and Solid Queue run separately, set this variable for BOTH processes and restart them. Editing .env.example alone does not apply a setting."
+    finish_title: "Reload the page and click Verify and import"
+    finish_note: "The button becomes available once the directory contains metadata.csv. The import runs in the background and does not use model GPU."
+    privacy_note: "For safety, the web form does not accept arbitrary filesystem paths or download arbitrary URLs. The server operator must stage the snapshot and set the environment variable."
+    dataset_link: "Open CompactFaces dataset on Hugging Face"
