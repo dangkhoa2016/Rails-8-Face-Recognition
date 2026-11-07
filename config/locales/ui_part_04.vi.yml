@@ -1,0 +1,112 @@
+vi:
+  ui:
+    Leave blank for the model's default instruction. WeMM rejects custom instructions.: Để trống để dùng chỉ dẫn mặc định
+      của mô hình. WeMM từ chối chỉ dẫn tùy chỉnh.
+    Live enrollment coverage, model readiness and processing health. No quality benchmark is performed in Rails.: Theo dõi
+      độ bao phủ enrollment, tình trạng mô hình và tiến độ xử lý. Rails không chạy benchmark chất lượng.
+    Manage profiles →: Quản lý hồ sơ →
+    'Manual test #': 'Thử thủ công #'
+    Margin: Biên chênh lệch
+    Matched candidate: Ứng viên trùng khớp
+    ? Matching a claimed unknown probe is a potential false match requiring ground-truth review; it is not automatically a
+      verified false accept.
+    : Kết quả khớp với ảnh thử được khai báo Unknown có thể là false match và cần kiểm tra ground truth; chưa tự động là false
+      accept đã xác minh.
+    Menu: Danh mục
+    Metadata SHA-256: SHA-256 metadata
+    Missing vectors: Vector còn thiếu
+    Model: Mô hình
+    Model API ID: Mã model API
+    Model default: Mặc định của mô hình
+    Model saved. Validate capabilities against live /v1/models before enabling.: Đã lưu mô hình. Hãy kiểm tra khả năng hỗ
+      trợ qua /v1/models trực tiếp trước khi bật.
+    Model updated. Existing profiles retain their pinned identity.: Đã cập nhật mô hình. Các hồ sơ cũ vẫn giữ định danh cố
+      định.
+    My private upload: Ảnh riêng của tôi
+    My submissions: Ảnh tôi đã tải lên
+    Never added to the 120 Core identities or model training data.: Không thêm ảnh vào 120 định danh Core hoặc dữ liệu huấn
+      luyện mô hình.
+    Never included in the enrollment gallery: Không bao giờ đưa vào thư viện enrollment
+    New unknown test: Thử Unknown mới
+    Next →: Tiếp →
+    No Core identities found: Không tìm thấy định danh Core
+    No accessible image attachment.: Không có ảnh đính kèm có thể truy cập.
+    No active uploads available.: Không có ảnh tải lên nào còn hiệu lực.
+    No administrative events: Chưa có nhật ký quản trị
+    No approved evaluation report is attached. A profile cannot be activated until independent calibration has been reviewed.: Chưa
+      đính kèm báo cáo đánh giá được duyệt. Không thể kích hoạt hồ sơ khi chưa kiểm tra hiệu chuẩn độc lập.
+    No attempts for this submission.: Chưa có lần nhận diện nào cho ảnh này.
+    No dataset imports: Chưa có lần nhập dữ liệu
+    No dataset snapshot has been imported.: Chưa nhập bản snapshot dữ liệu.
+    No embedding models: Chưa có mô hình embedding
+    No fake confidence score: Không có điểm tin cậy giả
+    No image: Chưa có ảnh
+    No inference services: Chưa có dịch vụ suy luận
+    No invented confidence score: Không bịa đặt điểm tin cậy
+    No manual unknown tests: Chưa có thử nghiệm Unknown thủ công
+    No matching images: Không tìm thấy ảnh phù hợp
+    No matching sample images: Không tìm thấy ảnh mẫu phù hợp
+    No note: Không có ghi chú
+    No private submissions: Chưa có ảnh riêng tư
+    No profiles have been defined: Chưa có hồ sơ nào
+    No profiles have been defined.: Chưa có hồ sơ nào.
+    No recognition attempts: Chưa có lần nhận diện nào
+    No recognition policies: Chưa có chính sách nhận diện
+    No recognition requests yet.: Chưa có yêu cầu nhận diện.
+    No requests yet.: Chưa có yêu cầu nào.
+    No source images are available yet, or the selected filters exclude them.: Chưa có ảnh nguồn hoặc bộ lọc hiện tại đã loại
+      hết ảnh.
+    No vectors are truncated to simulate a different dimension.: Không cắt ngắn vector để giả lập số chiều khác.
+    No vectors generated for this image yet.: Chưa tạo vector nào cho ảnh này.
+    None: Không có
+    Not activation-ready. All 120 active Core SOURCE vectors, ready status and a matching approved policy are required.: Chưa
+      thể kích hoạt. Cần đủ 120 vector Core SOURCE hoạt động, trạng thái Ready và chính sách phù hợp đã được phê duyệt.
+    Not approved: Chưa phê duyệt
+    Not configured: Chưa cấu hình
+    Not production validated: Chưa xác thực cho production
+    Not provided: Chưa cung cấp
+    Not set: Chưa thiết lập
+    Not verified: Chưa xác minh
+    Object: Đối tượng
+    'Of #{@profile.required_enrollments} active SOURCE images': 'Trong tổng số #{@profile.required_enrollments} ảnh SOURCE
+      đang hoạt động'
+    Only SOURCE is an enrollment reference. Other slots remain probes.: Chỉ SOURCE là ảnh enrollment tham chiếu. Những vị
+      trí khác chỉ dùng thăm dò.
+    ? Only authenticated members may upload an authorized, pre-cropped face image. Files are processed solely for a requested
+      identity comparison against the synthetic reference gallery. User uploads are never automatically enrolled or used for
+      training.
+    : Chỉ thành viên đã đăng nhập mới có thể tải lên ảnh khuôn mặt đã cắt sẵn và có quyền sử dụng hợp pháp. Ảnh chỉ được xử
+      lý để so sánh với thư viện tham chiếu tổng hợp theo yêu cầu. Ảnh người dùng không tự động trở thành enrollment hoặc
+      dữ liệu huấn luyện.
+    Only enter a margin if it was supported by the independent evaluation.: Chỉ nhập biên chênh lệch nếu có căn cứ từ kết
+      quả đánh giá độc lập.
+    ? Only the 120 Core dataset identities belong in this directory. Additional identities must never be inserted as enrollment
+      identities.
+    : Chỉ 120 định danh Core thuộc danh mục này. Không được đưa định danh Additional thành định danh enrollment.
+    Only the operator who submitted this probe may initiate its recognition request.: Chỉ người quản trị đã gửi ảnh thử này
+      mới có thể tạo yêu cầu nhận diện.
+    Only these enter the recognition gallery: Chỉ những ảnh này vào thư viện tham chiếu nhận diện
+    Only uncalibrated policy drafts may be approved.: Chỉ có thể phê duyệt bản nháp chính sách chưa hiệu chuẩn.
+    Open →: Mở →
+    Operations: Thao tác
+    Operations dashboard: Bảng điều khiển vận hành
+    Operator note: Ghi chú của người quản trị
+    Original SHA-256: SHA-256 ảnh gốc
+    Overview: Tổng quan
+    Owner: Chủ sở hữu
+    PNG, JPEG or WebP · 5 MiB maximum · 12 megapixels maximum · one pre-cropped face.: PNG, JPEG hoặc WebP · tối đa 5 MiB
+      · tối đa 12 megapixel · một khuôn mặt đã cắt sẵn.
+    PNG/JPEG/WebP · ≤5 MiB · ≤12 MP · pre-cropped single face.: PNG/JPEG/WebP · không quá 5 MiB · không quá 12 MP · một khuôn
+      mặt đã cắt sẵn.
+    Pagination: Phân trang
+    Pending: Đang chờ
+    Permanently delete this image, vectors and recognition attempts?: Xóa vĩnh viễn ảnh, vector và các lần nhận diện liên
+      quan?
+    Permanently delete this submission, its embeddings and recognition history?: Xóa vĩnh viễn ảnh này, các embedding và lịch
+      sử nhận diện liên quan?
+    Pinned checkpoint SHA: SHA checkpoint cố định
+    Pinned configuration: Cấu hình cố định
+    Pinned profile: Hồ sơ cố định
+    'Please correct these fields:': 'Vui lòng sửa các trường sau:'
+    Policy: Chính sách
+    Policy approved for this exact profile.: Đã phê duyệt chính sách cho đúng hồ sơ này.
