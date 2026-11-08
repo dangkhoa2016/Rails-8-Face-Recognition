@@ -1,0 +1,112 @@
+vi:
+  ui:
+    Run one inference request for this authorized synthetic sample?: Gửi một yêu cầu inference cho ảnh tổng hợp được cấp phép
+      này?
+    Run preflight: Chạy kiểm tra preflight
+    Run recognition: Thực hiện nhận diện
+    SHA-256: SHA-256
+    SOURCE enrolled: SOURCE đã enrollment
+    SOURCE enrollments: Ảnh SOURCE enrollment
+    Sample gallery: Thư viện ảnh mẫu
+    Sample image: Ảnh mẫu
+    Save immutable profile: Lưu hồ sơ bất biến
+    Save model: Lưu mô hình
+    Save policy draft: Lưu bản nháp chính sách
+    Save service: Lưu dịch vụ
+    Search: Tìm kiếm
+    Search identity key or name: Tìm mã định danh hoặc tên
+    Secret availability: Trạng thái khóa bí mật
+    Select an endpoint: Chọn endpoint
+    Select an upload: Chọn một ảnh đã tải lên
+    Selected sample: Ảnh mẫu được chọn
+    Send an authenticated GET /v1/models request to this allowlisted gateway?: Gửi GET /v1/models kèm xác thực tới gateway
+      đã được cho phép?
+    Send this authorized image to your configured inference service?: Gửi ảnh đã được cấp phép này đến dịch vụ suy luận đã
+      cấu hình?
+    Sign in: Đăng nhập
+    Sign in to workspace →: Đăng nhập để sử dụng →
+    Sign out: Đăng xuất
+    Signed in as: Đăng nhập bằng
+    Similarity: Độ tương đồng
+    Similarity is a numeric signal, not probability. Recognition decisions depend on reviewed, profile-specific calibration.: Độ
+      tương đồng là tín hiệu số, không phải xác suất. Kết luận nhận diện phụ thuộc vào hiệu chuẩn đã thẩm định riêng cho từng
+      profile.
+    Single pre-cropped face only: Chỉ hỗ trợ ảnh chứa một khuôn mặt đã cắt sẵn
+    Skip to main content: Chuyển đến nội dung chính
+    Slot: Vị trí ảnh
+    Snapshot provenance: Nguồn gốc bản snapshot
+    Source URL: URL nguồn
+    Source dataset: Bộ dữ liệu nguồn
+    Started: Bắt đầu
+    Started / finished: Bắt đầu / kết thúc
+    Status: Trạng thái
+    Storage and retention: Lưu trữ và thời hạn giữ dữ liệu
+    ? Store a threshold and traceable report fingerprint from the independent recognition quality notebook. A new policy begins
+      uncalibrated until reviewed and approved.
+    : Lưu ngưỡng và mã băm báo cáo có thể truy vết từ notebook đánh giá độc lập. Chính sách mới ở trạng thái chưa hiệu chuẩn
+      cho tới khi được kiểm tra và duyệt.
+    Stored embeddings (: Embedding đã lưu (
+    Stored face image: Ảnh khuôn mặt đã lưu
+    Submission and its stored recognition data were deleted.: Đã xóa ảnh và dữ liệu nhận diện liên quan.
+    Submitted: Đã gửi
+    Supported dimensions: Số chiều được hỗ trợ
+    Supported dimensions (JSON): Số chiều hỗ trợ (JSON)
+    ? Synthetic CompactFaces images have separate non-commercial licensing restrictions. Model checkpoints and other third-party
+      assets retain their respective licenses.
+    : Ảnh tổng hợp CompactFaces chịu những hạn chế giấy phép phi thương mại riêng. Checkpoint mô hình và tài nguyên bên thứ
+      ba vẫn chịu giấy phép tương ứng.
+    Synthetic dataset: Dữ liệu tổng hợp
+    Synthetic dataset reference population: Tập định danh tham chiếu tổng hợp
+    Terms: Điều khoản
+    ? The Core/Additional source label is a dataset label, not a guarantee that a face-recognition model will classify the
+      image correctly.
+    : Nhãn Core/Additional chỉ là nhãn bộ dữ liệu; không đảm bảo mô hình nhận diện khuôn mặt sẽ phân loại đúng ảnh.
+    ? The administrator must import all 120 Core SOURCE images, generate valid embeddings and activate a calibrated, approved
+      policy. No unverified results will be presented.
+    : Quản trị viên cần nhập đủ 120 ảnh Core SOURCE, tạo embedding hợp lệ và kích hoạt chính sách đã hiệu chuẩn/phê duyệt.
+      Không hiển thị kết quả chưa được xác thực.
+    The available evidence was insufficient for a confident gallery decision.: Bằng chứng hiện có không đủ để đưa ra kết luận
+      đáng tin cậy so với thư viện ảnh.
+    The background queue is unavailable; no inference request was scheduled.: Hàng đợi nền không khả dụng; chưa lên lịch gọi
+      inference.
+    ? The dataset must be imported and verified before its private reference images can be browsed. Try another filter or
+      ask the administrator to import the source snapshot.
+    : Cần nhập và xác minh bộ dữ liệu trước khi duyệt ảnh tham chiếu riêng tư. Hãy thử bộ lọc khác hoặc nhờ quản trị viên
+      nhập bản snapshot nguồn.
+    The external inference service may be starting a GPU worker.: Dịch vụ suy luận bên ngoài có thể đang khởi tạo GPU worker.
+    ? The import job never downloads files from this URL. An operator must stage an authorized snapshot on the application
+      host and configure DATASET_IMPORT_ROOT.
+    : Job nhập không tải tệp từ URL này. Người quản trị phải đặt snapshot được cấp phép trên máy chủ và cấu hình DATASET_IMPORT_ROOT.
+    ? The importer reads only a locally configured dataset root, verifies metadata and each PNG SHA-256, then records exactly
+      one Core SOURCE enrollment per Core identity. Re-running uses the same dataset import and skips existing verified attachments.
+    : Trình nhập chỉ đọc thư mục dữ liệu cục bộ đã cấu hình, xác minh metadata và SHA-256 từng ảnh PNG, rồi ghi đúng một enrollment
+      Core SOURCE cho mỗi định danh Core. Chạy lại sử dụng lần nhập cũ và bỏ qua ảnh đính kèm đã xác minh.
+    ? The input should already contain one cropped face. This application does not perform or guarantee face detection or
+      alignment.
+    : Ảnh đầu vào phải chứa một khuôn mặt đã cắt sẵn. Ứng dụng không thực hiện hoặc đảm bảo phát hiện/căn chỉnh khuôn mặt.
+    ? The model ID sent to Modal is a stable API string, not an internal numeric database ID. Dimensions are validated against
+      each model's declared capabilities.
+    : Mã mô hình gửi tới Modal là chuỗi API cố định, không phải ID số trong cơ sở dữ liệu. Số chiều được kiểm tra theo khả
+      năng từng mô hình.
+    The score did not satisfy this profile's approved threshold, not proof that an identity is absent outside the gallery.: Điểm
+      số không đạt ngưỡng đã duyệt của hồ sơ; điều này không chứng minh định danh không tồn tại ngoài thư viện.
+    The server verifies the chosen dimension belongs to the selected model's supported range or list.: Máy chủ sẽ xác minh
+      số chiều thuộc danh sách hoặc phạm vi mà mô hình hỗ trợ.
+    These conditions explain permitted use while the application is being evaluated.: Các điều kiện này giải thích phạm vi
+      sử dụng được phép trong quá trình đánh giá ứng dụng.
+    This image is not available.: Ảnh này không khả dụng.
+    ? This interface is an experimental research tool. Quality on synthetic faces has not established real-world biometric
+      accuracy; it must not be used for consequential identity decisions.
+    : Đây là công cụ nghiên cứu thử nghiệm. Chất lượng trên ảnh khuôn mặt tổng hợp chưa chứng minh độ chính xác sinh trắc
+      học ngoài đời thực; không được dùng cho các quyết định ảnh hưởng đáng kể đến con người.
+    This photo is a temporary query image and is never used for enrollment.: Ảnh này chỉ là đầu vào tạm thời của truy vấn,
+      không bao giờ dùng để enrollment.
+    This record is labeled: Bản ghi này có nhãn
+    This sample is not an enrolled face reference.: Ảnh mẫu này không phải ảnh tham chiếu đã enrollment.
+    ? This step records provenance only; it does not fetch arbitrary URLs or execute remote code. Import will read DATASET_IMPORT_ROOT
+      on the trusted server.
+    : Bước này chỉ lưu nguồn gốc, không tải URL tùy ý hay chạy mã từ xa. Quy trình nhập đọc từ DATASET_IMPORT_ROOT trên máy
+      chủ đáng tin cậy.
+    Threshold: Ngưỡng
+    Threshold ≠ probability of correct identity. Synthetic evaluation does not prove real-world performance.: Ngưỡng không
+      phải xác suất nhận diện đúng. Đánh giá trên ảnh tổng hợp không chứng minh hiệu năng thực tế.
