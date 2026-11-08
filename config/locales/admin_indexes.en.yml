@@ -1,0 +1,59 @@
+en:
+  admin_indexes:
+    collections:
+      core: Core
+      additional: Additional
+      admin: Admin upload
+      user: User upload
+    roles:
+      enrollment: Enrollment
+      sample_probe: Sample probe
+      submission: Submission
+    pagination:
+      summary: Page %{page} of %{pages} · %{total} records
+      previous: ← Previous
+    audit_actions:
+      dataset_import_created: Dataset snapshot registered
+      dataset_import_queued: Dataset import queued
+      embedding_model_created: Embedding model registered
+      embedding_model_updated: Embedding model updated
+      embedding_profile_selected: Embedding profile selected
+      embedding_profile_preflight_queued: Embedding preflight queued
+      embedding_profile_missing_queued: Missing embeddings queued
+      identity_status_changed: Core identity status changed
+      inference_service_created: Inference service registered
+      inference_service_updated: Inference service updated
+      inference_service_checked: Gateway connectivity checked
+      recognition_policy_created: Recognition policy registered
+      recognition_policy_approved: Recognition policy approved
+      recognition_policy_retired: Recognition policy retired
+      unknown_test_created: Unknown test created
+      unknown_test_deleted: Unknown test deleted
+      test_data_reset_requested: Test-data reset requested
+      user_promote: User promoted
+      user_demote: User demoted
+      user_suspend: User suspended
+      user_activate: User reactivated
+      user_revoke_sessions: User sessions revoked
+    audit_objects:
+      dataset_import: Dataset import
+      embedding_model: Embedding model
+      embedding_profile: Embedding profile
+      identity: Core identity
+      inference_service: Inference service
+      recognition_policy: Recognition policy
+      face_image: Face image
+      user: User account
+      data_reset: Data reset
+  status:
+    enrollment: Enrollment
+    sample_probe: Sample probe
+    submission: Submission
+    asserted_unknown: Asserted unknown
+    verified_unknown: Verified unknown
+  ui:
+    + Create profile: + Create profile
+    + Register snapshot: + Register snapshot
+    + Add model: + Add model
+    + Add service: + Add service
+    + Register policy: + Register policy

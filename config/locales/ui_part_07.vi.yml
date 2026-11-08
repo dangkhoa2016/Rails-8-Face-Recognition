@@ -1,0 +1,97 @@
+vi:
+  ui:
+    'Threshold:': 'Ngưỡng:'
+    ? Thresholds and margins come from independent evaluation evidence. Rails never runs a threshold sweep or substitutes
+      a guessed cutoff.
+    : Ngưỡng và biên chênh lệch phải từ bằng chứng đánh giá độc lập. Rails không dò ngưỡng hay tự bịa điểm cắt.
+    Timeout: Thời hạn yêu cầu
+    Timestamp: Thời gian
+    Token ref: Tham chiếu token
+    Top cosine similarity: Độ tương đồng cosine cao nhất
+    Top-1 vs top-2 margin (optional): Biên chênh lệch top-1 so với top-2 (tùy chọn)
+    Transparency: Minh bạch
+    Try against active gallery: Thử với thư viện đang hoạt động
+    Try recognition: Thử nhận diện
+    Try recognition with this sample: Thử nhận diện ảnh mẫu này
+    Understand identity signals.: Hiểu tín hiệu định danh.
+    Unknown test saved as asserted_unknown, not a verified false positive.: Đã lưu thử nghiệm với nhãn asserted_unknown, chưa
+      phải false positive đã xác minh.
+    Unknown tests: Thử nghiệm Unknown
+    Unknown to this gallery: Không thuộc thư viện tham chiếu này
+    Unknown-test data deleted.: Đã xóa dữ liệu thử nghiệm Unknown.
+    Upload a pre-cropped image with the required permissions and consent. Only your account can view it.: Tải lên ảnh đã cắt
+      khuôn mặt cùng quyền sử dụng và sự đồng ý cần thiết. Chỉ tài khoản của bạn được xem ảnh.
+    Upload an authorized face image: Tải lên ảnh khuôn mặt được cấp phép
+    ? Upload an authorized image to inspect its behavior against the active Core gallery. A confirmed false accept requires
+      verified ground truth.
+    : Tải lên ảnh được phép sử dụng để kiểm tra với thư viện Core đang hoạt động. Muốn kết luận false accept phải có ground
+      truth đã xác minh.
+    ? Upload an image you are authorized to process. This is a query submission, not a newly enrolled identity, and it expires
+      after 24 hours.
+    : Tải lên ảnh bạn được phép xử lý. Đây là ảnh truy vấn, không phải định danh enrollment mới; ảnh hết hạn sau 24 giờ.
+    Upload authorized image: Tải lên ảnh được cấp phép
+    Upload authorized image →: Tải lên ảnh được cấp phép →
+    ? Upload only images you own or are explicitly authorized to process, with any consent required by the relevant laws and
+      context. Do not upload photos of others without permission or scrape images from the internet for identification.
+    : Chỉ tải lên ảnh bạn sở hữu hoặc được cấp phép rõ ràng để xử lý, cùng mọi sự đồng ý cần thiết theo pháp luật và bối cảnh
+      áp dụng. Không tải ảnh người khác khi chưa được phép hoặc thu thập ảnh từ Internet nhằm nhận diện.
+    Upload private probe: Tải lên ảnh thử riêng tư
+    Upload privately: Tải lên riêng tư
+    Uploaded: Đã tải lên lúc
+    Uploading…: Đang tải lên…
+    ? Uploads are kept in private object storage with a 24-hour expiry at submission time. A scheduled purge job removes expired
+      submissions, associated embeddings and results; actual removal depends on the job runner and storage system operating
+      correctly. You can also delete an upload manually at any time.
+    : Ảnh tải lên được lưu trong kho đối tượng riêng tư, hết hạn sau 24 giờ kể từ lúc gửi. Job dọn dẹp định kỳ xóa ảnh hết
+      hạn, embedding và kết quả liên quan; thời điểm xóa thực tế phụ thuộc vào worker và hệ thống lưu trữ. Bạn cũng có thể
+      xóa ảnh bất kỳ lúc nào.
+    Uploads are private and only visible to your account.: Ảnh tải lên chỉ hiển thị cho tài khoản của bạn.
+    Upstream model repository: Repository mô hình nguồn
+    Use a previously uploaded image. Only you can access it.: Sử dụng ảnh đã tải lên trước đây. Chỉ bạn có quyền truy cập.
+    Use the exact: Sử dụng đúng
+    Use this demo responsibly: Sử dụng bản demo có trách nhiệm
+    ? Use your account dashboard to review and delete private uploads. Manual deletion removes associated recognition records
+      and embeddings. The reset-test-data function clears your prior test activity without changing Core references. Contact
+      the operator for account deletion and legal privacy requests.
+    : Sử dụng trang tài khoản để xem và xóa ảnh riêng tư đã tải lên. Xóa thủ công cũng xóa các kết quả nhận diện và embedding
+      liên quan. Chức năng reset dữ liệu test xóa hoạt động thử nghiệm trước đây của bạn mà không thay đổi tham chiếu Core.
+      Liên hệ người vận hành nếu cần xóa tài khoản hoặc có yêu cầu pháp lý về quyền riêng tư.
+    Value from independent evaluation: Giá trị từ đánh giá độc lập
+    Verification or import is running. This page refreshes periodically while work is in progress.: Đang xác minh hoặc nhập
+      dữ liệu. Trang sẽ tự làm mới định kỳ khi job đang chạy.
+    Verified files: Tệp đã xác minh
+    Verify / import again: Xác minh / nhập lại
+    ? Verify all 935 source files and import records from the trusted dataset root? This may upload reference images to private
+      storage.
+    : Kiểm tra tất cả 935 tệp nguồn và nhập bản ghi từ thư mục tin cậy? Thao tác có thể tải ảnh tham chiếu lên kho lưu trữ
+      riêng tư.
+    Verify and import: Xác minh và nhập
+    Version: Phiên bản
+    View sample →: Xem ảnh mẫu →
+    View →: Xem →
+    Waiting for preflight: Chờ kiểm tra preflight
+    Workspace: Không gian làm việc
+    Workspace / 1:N identification: Không gian làm việc / Nhận diện 1:N
+    Workspace / Private data: Không gian làm việc / Dữ liệu riêng tư
+    Workspace / Private upload: Không gian làm việc / Ảnh riêng tư
+    Workspace / Private uploads: Không gian làm việc / Ảnh riêng tư
+    Workspace / Results: Không gian làm việc / Kết quả
+    Your attempts are scoped to your account. Each request preserves the exact profile and policy selected at submission time.: Mỗi
+      lần thử chỉ thuộc tài khoản của bạn. Mỗi yêu cầu lưu đúng hồ sơ và chính sách được chọn tại thời điểm gửi.
+    Your controls: Quyền kiểm soát của bạn
+    Your privacy controls: Quyền kiểm soát dữ liệu riêng tư
+    ? Your request is queued or being processed. This page refreshes while the result is pending. No identity claim has been
+      made.
+    : Yêu cầu đang xếp hàng hoặc xử lý. Trang sẽ tự làm mới trong khi chờ; chưa có kết luận về định danh.
+    advertised by this model. Qwen and WeMM may differ.: được mô hình công bố. Qwen và WeMM có thể khác nhau.
+    asserted_unknown: asserted_unknown
+    dimensions: số chiều
+    dimensions · revision: số chiều · phiên bản
+    embedding_metadata.preprocessing_version: embedding_metadata.preprocessing_version
+    enrollment vectors: vector enrollment
+    for attribution and provenance.: để xem thông tin nguồn và xuất xứ.
+    matching samples: ảnh mẫu phù hợp
+    records: bản ghi
+    '· Approved policy #': '· Chính sách đã phê duyệt #'
+    · Query only · Not enrolled: · Chỉ dùng để truy vấn · Không enrollment
+    · activated: · kích hoạt lúc

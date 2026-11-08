@@ -1,0 +1,59 @@
+vi:
+  admin_indexes:
+    collections:
+      core: Bộ Core
+      additional: Bộ Additional
+      admin: Ảnh tải lên bởi quản trị viên
+      user: Ảnh tải lên bởi thành viên
+    roles:
+      enrollment: Ảnh enrollment
+      sample_probe: Ảnh thăm dò
+      submission: Ảnh tải lên
+    pagination:
+      summary: Trang %{page}/%{pages} · %{total} bản ghi
+      previous: ← Trang trước
+    audit_actions:
+      dataset_import_created: Đăng ký snapshot bộ dữ liệu
+      dataset_import_queued: Đưa tác vụ nhập dữ liệu vào hàng đợi
+      embedding_model_created: Đăng ký mô hình embedding
+      embedding_model_updated: Cập nhật mô hình embedding
+      embedding_profile_selected: Chọn hồ sơ embedding
+      embedding_profile_preflight_queued: Đưa kiểm tra preflight vào hàng đợi
+      embedding_profile_missing_queued: Đưa tác vụ tạo embedding còn thiếu vào hàng đợi
+      identity_status_changed: Thay đổi trạng thái định danh Core
+      inference_service_created: Đăng ký dịch vụ suy luận
+      inference_service_updated: Cập nhật dịch vụ suy luận
+      inference_service_checked: Kiểm tra kết nối gateway
+      recognition_policy_created: Đăng ký chính sách nhận diện
+      recognition_policy_approved: Phê duyệt chính sách nhận diện
+      recognition_policy_retired: Ngưng sử dụng chính sách nhận diện
+      unknown_test_created: Tạo ảnh thử Unknown
+      unknown_test_deleted: Xóa ảnh thử Unknown
+      test_data_reset_requested: Yêu cầu đặt lại dữ liệu thử nghiệm
+      user_promote: Cấp quyền quản trị viên
+      user_demote: Chuyển thành thành viên
+      user_suspend: Khóa tài khoản
+      user_activate: Mở khóa tài khoản
+      user_revoke_sessions: Thu hồi phiên đăng nhập
+    audit_objects:
+      dataset_import: Lần nhập bộ dữ liệu
+      embedding_model: Mô hình embedding
+      embedding_profile: Hồ sơ embedding
+      identity: Định danh Core
+      inference_service: Dịch vụ suy luận
+      recognition_policy: Chính sách nhận diện
+      face_image: Ảnh khuôn mặt
+      user: Tài khoản người dùng
+      data_reset: Yêu cầu đặt lại dữ liệu
+  status:
+    enrollment: Ảnh enrollment
+    sample_probe: Ảnh thăm dò
+    submission: Ảnh tải lên
+    asserted_unknown: Unknown do người dùng khai báo
+    verified_unknown: Unknown đã xác minh
+  ui:
+    + Create profile: + Tạo hồ sơ
+    + Register snapshot: + Đăng ký snapshot
+    + Add model: + Thêm mô hình
+    + Add service: + Thêm dịch vụ
+    + Register policy: + Đăng ký chính sách
