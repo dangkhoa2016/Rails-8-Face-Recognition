@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>" data-theme="<%= selected_theme %>" class="h-full">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="turbo-refresh-method" content="morph">
+    <meta name="turbo-refresh-scroll" content="preserve">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="description" content="Rails 8 Face Recognition — privacy-first synthetic identity research">
+    <title><%= content_for?(:title) ? yield(:title) : 'Rails 8 Face Recognition' %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'tailwind', 'data-turbo-track': 'reload' %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body class="min-h-screen">
+    <%= link_to t('common.skip'), '#main-content', class: 'sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-3 focus:rounded-lg focus:bg-cyan-300 focus:px-4 focus:py-2 focus:text-slate-950' %>
+    <div class="flex min-h-screen flex-col lg:flex-row">
+      <aside data-controller="navigation" class="site-sidebar relative z-20 border-b border-white/10 lg:sticky lg:top-0 lg:h-screen lg:w-[268px] lg:shrink-0 lg:overflow-y-auto lg:border-b-0 lg:border-r">
+        <div class="flex items-center justify-between px-5 py-5 lg:px-6 lg:py-7">
+          <%= link_to root_path, class: 'flex items-center gap-3', 'aria-label': 'Rails 8 Face Recognition home' do %>
+            <span class="grid h-11 w-11 place-items-center rounded-2xl border border-cyan-300/20 bg-gradient-to-br from-cyan-300/25 to-indigo-500/20 text-2xl text-cyan-200">◈</span>
+            <span class="min-w-0"><strong class="block text-base tracking-tight brand-text">Rails 8</strong><span class="block text-[10px] font-bold uppercase tracking-[.16em] text-cyan-300">Face Recognition</span></span>
+          <% end %>
+          <button type="button" class="btn-secondary lg:hidden" aria-label="<%= t('common.menu') %>" aria-controls="mobile-navigation" aria-expanded="false" data-action="click->navigation#toggle" data-navigation-target="button"><%= t('common.menu') %></button>
+        </div>
+        <div id="mobile-navigation" class="hidden px-4 pb-6 lg:block" data-navigation-target="panel">
+          <nav aria-label="<%= t('nav.workspace') %>" class="space-y-1">
+            <p class="px-4 pb-2 text-[10px] font-bold uppercase tracking-[.2em] text-slate-500"><%= t('nav.workspace') %></p>
+            <%= nav_link t('nav.overview'), root_path, icon: '⌂' %>
+            <%= nav_link t('nav.about'), about_path, icon: 'ⓘ' %>
+            <% if current_user %>
+              <%= nav_link t('nav.samples'), samples_path, icon: '▦' %>
+              <%= nav_link t('nav.try'), new_recognition_attempt_path, icon: '◎', active: controller_name == 'recognition_attempts' && action_name == 'new' %>
+              <%= nav_link t('nav.submissions'), submissions_path, icon: '▣' %>
+              <%= nav_link t('nav.history'), recognition_attempts_path, icon: '◷', active: controller_name == 'recognition_attempts' && action_name != 'new' %>
+              <%= nav_link t('nav.resets'), data_resets_path, icon: '↺' %>
+              <% if current_user.admin? %>
+                <p class="px-4 pb-2 pt-7 text-[10px] font-bold uppercase tracking-[.2em] text-slate-500"><%= t('nav.admin') %></p>
+                <%= nav_link t('nav.dashboard'), admin_root_path, icon: '◫' %>
+                <%= nav_link t('nav.imports'), admin_dataset_imports_path, icon: '⇩' %>
+                <%= nav_link t('nav.identities'), admin_identities_path, icon: '♧' %>
+                <%= nav_link t('nav.images'), admin_face_images_path, icon: '▧' %>
+                <%= nav_link t('nav.profiles'), admin_embedding_profiles_path, icon: '⧉' %>
+                <%= nav_link t('nav.models'), admin_embedding_models_path, icon: '◇' %>
+                <%= nav_link t('nav.services'), admin_inference_services_path, icon: '⇄' %>
+                <%= nav_link t('nav.policies'), admin_recognition_policies_path, icon: '☷' %>
+                <%= nav_link t('nav.unknown'), admin_unknown_tests_path, icon: '?' %>
+                <%= nav_link t('nav.users'), admin_users_path, icon: '♙' %>
+                <%= nav_link t('nav.audits'), admin_audit_events_path, icon: '≡' %>
+              <% end %>
+            <% end %>
+          </nav>
+          <div class="mt-7 panel-soft px-4 py-4">
+            <% if current_user %>
+              <p class="text-xs font-medium uppercase tracking-wide text-slate-500"><%= t('common.signed_as') %></p>
+              <p class="mt-1 truncate text-sm font-semibold" title="<%= current_user.email %>"><%= current_user.email %></p>
+              <p class="mt-1 text-xs text-cyan-300"><%= t("users.role_#{current_user.role}") %></p>
+              <%= button_to t('nav.sign_out'), session_path, method: :delete, class: 'btn-secondary mt-4 w-full' %>
+            <% else %>
+              <p class="text-sm leading-6 text-slate-400"><%= t('auth.sign_in_intro') %></p>
+              <%= link_to t('nav.sign_in'), sign_in_path, class: 'btn-primary mt-4 w-full' %>
+              <% if registration_available? %><%= link_to t('auth.register'), new_registration_path, class: 'btn-secondary mt-3 w-full' %><% end %>
+            <% end %>
+          </div>
+        </div>
+      </aside>
+      <div class="flex min-w-0 flex-1 flex-col">
+        <header class="site-header flex min-h-[80px] flex-wrap items-center justify-between gap-3 border-b border-white/10 px-5 py-3 backdrop-blur-md sm:px-8 lg:px-11">
+          <div class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-cyan-400" aria-hidden="true"></span><span class="text-xs font-semibold uppercase tracking-[.12em] text-slate-400"><%= t('common.workspace_title') %></span></div>
+          <div class="flex flex-wrap items-center gap-3">
+            <%= form_with url: preferences_path, method: :patch, data: { turbo: false, controller: 'preferences' }, class: 'flex items-center gap-2' do |f| %>
+              <%= f.label :locale, t('common.switch_language'), class: 'sr-only' %>
+              <%= f.select :locale, [['English', 'en'], ['Tiếng Việt', 'vi']], { selected: I18n.locale.to_s }, class: 'toolbar-select', 'aria-label': t('common.switch_language'), data: { action: 'change->preferences#submit' } %>
+              <noscript><%= f.submit t('common.apply'), class: 'btn-secondary' %></noscript>
+            <% end %>
+            <%= form_with url: preferences_path, method: :patch, data: { turbo: false, controller: 'preferences' }, class: 'flex items-center gap-2' do |f| %>
+              <%= f.label :theme, t('common.switch_theme'), class: 'sr-only' %>
+              <%= f.select :theme, [[t('common.light'), 'light'], [t('common.dark'), 'dark'], [t('common.auto'), 'auto']], { selected: selected_theme }, class: 'toolbar-select', 'aria-label': t('common.switch_theme'), data: { action: 'change->preferences#submit' } %>
+              <noscript><%= f.submit t('common.apply'), class: 'btn-secondary' %></noscript>
+            <% end %>
+            <span class="badge badge-warning hidden xl:inline-flex"><%= t('common.not_validated') %></span>
+          </div>
+        </header>
+        <main id="main-content" class="mx-auto flex w-full max-w-[1550px] flex-1 flex-col px-5 py-8 sm:px-8 lg:px-11 lg:py-10">
+          <div class="flex-1">
+            <% if notice.present? %><div role="status" class="alert-info mb-6"><%= notice %></div><% end %>
+            <% if alert.present? %><div role="alert" class="alert-error mb-6"><%= alert %></div><% end %>
+            <%= yield %>
+          </div>
+          <footer class="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs leading-6 text-slate-500">
+            <span>© <%= Date.current.year %> Rails 8 Face Recognition · <%= t('common.copyright') %></span>
+            <span><%= link_to t('nav.privacy'), privacy_path, class: 'text-link' %> · <%= link_to t('nav.terms'), terms_path, class: 'text-link' %> · <a href="https://huggingface.co/datasets/dangkhoa2016/compactfaces-synthetic-face-dataset" class="text-link" rel="noopener noreferrer"><%= t('common.attribution') %></a></span>
+          </footer>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
