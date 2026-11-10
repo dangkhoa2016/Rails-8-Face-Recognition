@@ -1,0 +1,10 @@
+<% pages = (total.to_f / per_page).ceil %>
+<% if pages > 1 %>
+  <nav aria-label="<%= ui('Pagination') %>" class="mt-6 flex flex-wrap items-center justify-between gap-4 text-sm">
+    <span class="text-slate-500"><%= t("admin_indexes.pagination.summary", page: page, pages: pages, total: total) %></span>
+    <div class="flex gap-2">
+      <% if page > 1 %><%= link_to t("admin_indexes.pagination.previous"), url_for(request.query_parameters.merge(page: page - 1)), class: "btn-secondary" %><% end %>
+      <% if page < pages %><%= link_to ui("Next →"), url_for(request.query_parameters.merge(page: page + 1)), class: "btn-secondary" %><% end %>
+    </div>
+  </nav>
+<% end %>

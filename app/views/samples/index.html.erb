@@ -1,0 +1,14 @@
+<% content_for :title, "#{ui('Sample gallery')} · Rails 8 Face Recognition" %>
+<%= render "shared/page_header", eyebrow: ui("Explore / Synthetic faces"), title: ui("Sample gallery"), description: ui("Core P1/P2/E1/E2 and Additional samples are query probes, never enrollment references. All photos require the dataset publisher's attribution.") %>
+<%= form_with url: samples_path, method: :get, class: "panel mt-8 flex flex-wrap items-end gap-4 p-5" do |f| %>
+  <div class="min-w-40 flex-1"><%= f.label :collection, ui("Collection"), class: "field-label" %><%= f.select :collection, [[ui("All collections"), ""], [ui("Core · known probes"), "core"], [ui("Additional · unknown probes"), "additional"]], { selected: @collection }, class: "field" %></div>
+  <div class="min-w-40 flex-1"><%= f.label :slot, ui("Pose / expression"), class: "field-label" %><%= f.select :slot, [[ui("All slots"), ""]] + %w[P1 P2 E1 E2].map { |s| [s, s] }, { selected: @slot }, class: "field" %></div>
+  <%= f.submit ui("Apply filters"), class: "btn-primary" %><%= link_to ui("Reset"), samples_path, class: "btn-quiet" %>
+<% end %>
+<p class="mt-6 text-sm text-slate-500"><%= @total %> <%= ui('matching samples') %></p>
+<% if @samples.empty? %>
+  <div class="mt-5"><%= render "shared/empty", title: ui("No matching sample images"), description: ui("The dataset must be imported and verified before its private reference images can be browsed. Try another filter or ask the administrator to import the source snapshot.") %></div>
+<% else %>
+  <div class="mt-5 grid gap-5 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"><% @samples.each do |sample| %><%= render "shared/image_card", image: sample %><% end %></div>
+  <%= render "shared/pager", total: @total, page: @page, per_page: 24 %>
+<% end %>

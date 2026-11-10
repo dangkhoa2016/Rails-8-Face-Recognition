@@ -1,0 +1,8 @@
+<div class="flex flex-wrap items-start justify-between gap-5">
+  <div class="max-w-3xl">
+    <% if local_assigns[:eyebrow].present? %><p class="section-kicker"><%= eyebrow %></p><% end %>
+    <h1 class="page-title"><%= title %></h1>
+    <% if local_assigns[:description].present? %><p class="page-description"><%= description %></p><% end %>
+  </div>
+  <% if local_assigns[:action_path].present? %><%= link_to action_text, action_path, class: "btn-primary" %><% end %>
+</div>

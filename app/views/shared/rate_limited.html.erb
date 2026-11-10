@@ -1,0 +1,6 @@
+<% content_for :title, "#{t('errors_ui.rate_limited_title')} · Rails 8 Face Recognition" %>
+<div class="mx-auto max-w-lg panel p-8 text-center" role="alert">
+  <h1 class="page-title"><%= t('errors_ui.rate_limited_title') %></h1>
+  <p class="page-description"><%= t('errors_ui.rate_limited_detail') %></p>
+  <%= link_to t('nav.overview'), root_path, class: 'btn-secondary mt-6' %>
+</div>

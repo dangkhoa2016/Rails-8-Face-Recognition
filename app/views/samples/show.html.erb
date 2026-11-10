@@ -1,0 +1,10 @@
+<% content_for :title, "Synthetic Sample · Rails 8 Face Recognition" %>
+<%= link_to "← Back to gallery", samples_path, class: "text-link text-sm" %>
+<div class="mt-6 grid gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.8fr)]">
+  <div class="panel overflow-hidden"><% if @sample.image.attached? %><%= image_tag face_image_path(@sample), alt: "Synthetic face sample #{@sample.dataset_identity_key}", class: "max-h-[720px] w-full object-contain" %><% else %><div class="grid aspect-square place-items-center text-slate-500"><%= ui('Image unavailable') %></div><% end %></div>
+  <div class="space-y-5"><div><p class="section-kicker"><%= ui('Authorized dataset sample') %></p><h1 class="page-title"><%= @sample.dataset_identity_key %></h1><p class="page-description"><%= ui('This sample is not an enrolled face reference.') %></p></div>
+    <div class="panel grid gap-5 p-6"><div><p class="detail-label"><%= ui('Collection') %></p><p class="detail-value"><%= @sample.collection.capitalize %></p></div><div><p class="detail-label"><%= ui('Dataset slot') %></p><p class="detail-value"><%= @sample.slot %></p></div><div><p class="detail-label"><%= ui('SHA-256') %></p><p class="detail-value font-mono text-xs"><%= @sample.original_sha256 %></p></div></div>
+    <% if @sample.image.attached? %><%= button_to ui("Try recognition with this sample"), recognition_attempts_path(face_image_id: @sample.id), method: :post, class: "btn-primary w-full", form: { data: { turbo_confirm: ui("Run one inference request for this authorized synthetic sample?") } } %><% end %>
+    <div class="alert-info"><%= ui('The Core/Additional source label is a dataset label, not a guarantee that a face-recognition model will classify the image correctly.') %></div>
+  </div>
+</div>
