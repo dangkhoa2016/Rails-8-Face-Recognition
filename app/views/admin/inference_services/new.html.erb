@@ -1,0 +1,4 @@
+<% content_for :title, "New Inference Service · Rails 8 Face Recognition" %>
+<%= link_to "← Inference services", admin_inference_services_path, class: "text-link text-sm" %>
+<%= render "shared/page_header", eyebrow: ui("Administration / Infrastructure"), title: ui("Add inference service"), description: ui("Create a server-side HTTP connection definition without exposing bearer secrets.") %>
+<%= render "form", service: @service %>

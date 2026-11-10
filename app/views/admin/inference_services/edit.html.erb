@@ -1,0 +1,4 @@
+<% content_for :title, "Edit Inference Service · Rails 8 Face Recognition" %>
+<%= link_to "← Inference services", admin_inference_services_path, class: "text-link text-sm" %>
+<%= render "shared/page_header", eyebrow: ui("Administration / Infrastructure"), title: "Edit #{@service.name}", description: ui("Changes to the service URL should be reviewed carefully. Existing embedding profiles retain their original pinned model and configuration identifiers.") %>
+<%= render "form", service: @service %>
