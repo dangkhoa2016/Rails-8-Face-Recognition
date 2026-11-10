@@ -1,0 +1,10 @@
+<div class="panel mt-8 max-w-3xl p-7"><% if @error_message %><div class="alert-error mb-5"><%= @error_message %></div><% end %><%= render "shared/form_errors", record: model %>
+<%= form_with model: [:admin, model], class: "space-y-5" do |f| %>
+  <div><%= f.label :inference_service_id, ui("Inference service"), class: "field-label" %><%= f.collection_select :inference_service_id, @services, :id, :name, { prompt: ui("Select an endpoint") }, class: "field", required: true %></div>
+  <div><%= f.label :api_model_id, ui("API model identifier"), class: "field-label" %><%= f.text_field :api_model_id, required: true, class: "field", placeholder: "qwen3-vl-embedding-8b" %></div>
+  <div><%= f.label :display_name, class: "field-label" %><%= f.text_field :display_name, required: true, class: "field" %></div>
+  <div><%= f.label :repository_name, ui("Upstream model repository"), class: "field-label" %><%= f.text_field :repository_name, required: true, class: "field" %></div>
+  <div><%= label_tag :supported_dimensions_json, ui("Supported dimensions (JSON)"), class: "field-label" %><%= text_area_tag :supported_dimensions_json, params[:supported_dimensions_json].presence || model.supported_dimensions.to_json, rows: 3, required: true, class: "field font-mono text-xs" %><p class="field-hint"><%= ui('Examples: [1024,2048,4096] or {"min":64,"max":4096}. Always confirm capability against /v1/models.') %></p></div>
+  <label class="flex items-center gap-3 rounded-xl border border-white/10 p-4 text-sm"><%= f.check_box :enabled, class: "h-4 w-4 accent-cyan-300" %><span><%= ui('Enable this model for new embedding profiles') %></span></label>
+  <div class="flex gap-3"><%= f.submit ui("Save model"), class: "btn-primary" %><%= link_to ui("Cancel"), admin_embedding_models_path, class: "btn-secondary" %></div>
+<% end %></div>

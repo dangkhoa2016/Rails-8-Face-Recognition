@@ -1,0 +1,4 @@
+<% content_for :title, "Edit Embedding Model · Rails 8 Face Recognition" %>
+<%= link_to "← Embedding models", admin_embedding_models_path, class: "text-link text-sm" %>
+<%= render "shared/page_header", eyebrow: ui("Administration / Models"), title: "Edit #{@model.display_name}", description: ui("Changing model capabilities does not rewrite or delete vectors tied to old immutable profiles.") %>
+<%= render "form", model: @model %>

@@ -1,0 +1,108 @@
+<% content_for :title, "#{t('embedding_profile_form.document_title')} · Rails 8 Face Recognition" %>
+<%= link_to "← #{t('embedding_profile_form.back')}", admin_embedding_profiles_path, class: "text-link text-sm" %>
+<%= render "shared/page_header",
+  eyebrow: t("embedding_profile_form.eyebrow"),
+  title: t("embedding_profile_form.title"),
+  description: t("embedding_profile_form.introduction") %>
+
+<section class="panel mt-8 p-6 sm:p-7" data-testid="embedding-profile-guide" aria-labelledby="embedding-profile-guide-title">
+  <h2 id="embedding-profile-guide-title" class="text-xl font-semibold"><%= t("embedding_profile_form.guide_title") %></h2>
+  <p class="mt-2 text-sm leading-7 text-slate-400"><%= t("embedding_profile_form.guide_intro") %></p>
+  <ol class="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    <% (1..4).each do |step| %>
+      <li class="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+        <span class="text-xs font-bold tracking-wider text-cyan-300" aria-hidden="true"><%= format("%02d", step) %></span>
+        <h3 class="mt-2 text-sm font-semibold text-slate-100"><%= t("embedding_profile_form.step_#{step}_title") %></h3>
+        <p class="mt-2 text-xs leading-6 text-slate-400"><%= t("embedding_profile_form.step_#{step}_body") %></p>
+      </li>
+    <% end %>
+  </ol>
+</section>
+
+<% if @error_message.present? %>
+  <div class="alert-error mt-6" role="alert"><%= @error_message %></div>
+<% end %>
+
+<div class="mt-6 grid gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(320px,.75fr)]">
+  <section class="panel min-w-0 p-6 sm:p-7" aria-labelledby="embedding-profile-form-title">
+    <h2 id="embedding-profile-form-title" class="text-xl font-semibold"><%= t("embedding_profile_form.form_title") %></h2>
+    <p class="mt-2 text-sm leading-7 text-slate-400"><%= t("embedding_profile_form.form_intro") %></p>
+
+    <% if @models.empty? %>
+      <div class="alert-warning mt-5" role="status" data-testid="embedding-profile-no-models">
+        <p class="font-semibold"><%= t("embedding_profile_form.no_models_title") %></p>
+        <p class="mt-2 text-sm"><%= t("embedding_profile_form.no_models_body") %></p>
+        <div class="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+          <%= link_to t("embedding_profile_form.add_model"), new_admin_embedding_model_path, class: "text-link text-sm" %>
+          <%= link_to t("embedding_profile_form.manage_services"), admin_inference_services_path, class: "text-link text-sm" %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= form_with url: admin_embedding_profiles_path, class: "mt-5 space-y-5" do |f| %>
+      <div>
+        <%= f.label :embedding_model_id, t("embedding_profile_form.model_label"), class: "field-label" %>
+        <%= f.select :embedding_model_id,
+          @models.map { |model| ["#{model.display_name} · #{model.api_model_id}", model.id] },
+          { prompt: t("embedding_profile_form.model_prompt"), selected: params[:embedding_model_id] },
+          { required: true, class: "field" } %>
+        <p class="field-hint"><%= t("embedding_profile_form.model_hint") %></p>
+      </div>
+      <div>
+        <%= f.label :dimension, t("embedding_profile_form.dimension_label"), class: "field-label" %>
+        <%= f.number_field :dimension, value: params[:dimension], min: 1, max: 4096, step: 1,
+          required: true, class: "field", placeholder: t("embedding_profile_form.dimension_placeholder") %>
+        <p class="field-hint"><%= t("embedding_profile_form.dimension_hint") %></p>
+      </div>
+      <div>
+        <%= f.label :model_revision, t("embedding_profile_form.revision_label"), class: "field-label" %>
+        <%= f.text_field :model_revision, value: params[:model_revision],
+          placeholder: t("embedding_profile_form.revision_placeholder"),
+          pattern: "[0-9a-f]{40,64}", minlength: 40, maxlength: 64, required: true,
+          autocomplete: "off", spellcheck: false, class: "field font-mono text-xs" %>
+        <p class="field-hint"><%= t("embedding_profile_form.revision_hint") %></p>
+      </div>
+      <div>
+        <%= f.label :preprocessing_version, t("embedding_profile_form.preprocessing_label"), class: "field-label" %>
+        <%= f.text_field :preprocessing_version, value: params[:preprocessing_version], required: true,
+          class: "field", placeholder: t("embedding_profile_form.preprocessing_placeholder") %>
+        <p class="field-hint"><%= t("embedding_profile_form.preprocessing_hint") %></p>
+      </div>
+      <div>
+        <%= f.label :instruction, t("embedding_profile_form.instruction_label"), class: "field-label" %>
+        <%= f.text_area :instruction, value: params[:instruction], rows: 3, maxlength: 512, class: "field" %>
+        <p class="field-hint"><%= t("embedding_profile_form.instruction_hint") %></p>
+      </div>
+      <div class="alert-warning"><%= t("embedding_profile_form.warning") %></div>
+      <div class="flex flex-wrap gap-3">
+        <%= f.submit t("embedding_profile_form.save"), class: "btn-primary", disabled: @models.empty? %>
+        <%= link_to t("embedding_profile_form.cancel"), admin_embedding_profiles_path, class: "btn-secondary" %>
+      </div>
+    <% end %>
+  </section>
+
+  <aside class="min-w-0 space-y-5">
+    <section class="panel p-6 sm:p-7" aria-labelledby="embedding-profile-concept-title">
+      <h2 id="embedding-profile-concept-title" class="text-lg font-semibold"><%= t("embedding_profile_form.concept_title") %></h2>
+      <p class="mt-3 text-sm leading-7 text-slate-400"><%= t("embedding_profile_form.concept_intro") %></p>
+      <dl class="mt-5 space-y-4">
+        <% (1..3).each do |item| %>
+          <div class="border-t border-white/10 pt-4">
+            <dt class="text-sm font-semibold text-slate-100"><%= t("embedding_profile_form.concept_#{item}_title") %></dt>
+            <dd class="mt-1 text-sm leading-6 text-slate-400"><%= t("embedding_profile_form.concept_#{item}_body") %></dd>
+          </div>
+        <% end %>
+      </dl>
+    </section>
+
+    <section class="panel p-6 sm:p-7" aria-labelledby="embedding-profile-next-title">
+      <h2 id="embedding-profile-next-title" class="text-lg font-semibold"><%= t("embedding_profile_form.next_title") %></h2>
+      <ol class="mt-4 list-decimal space-y-3 pl-5 text-sm leading-6 text-slate-400">
+        <% (1..4).each do |step| %>
+          <li><%= t("embedding_profile_form.next_#{step}") %></li>
+        <% end %>
+      </ol>
+      <p class="mt-5 border-t border-white/10 pt-4 text-xs leading-6 text-amber-300"><%= t("embedding_profile_form.next_note") %></p>
+    </section>
+  </aside>
+</div>

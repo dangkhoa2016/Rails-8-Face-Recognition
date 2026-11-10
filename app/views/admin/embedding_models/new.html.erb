@@ -1,0 +1,4 @@
+<% content_for :title, "New Embedding Model · Rails 8 Face Recognition" %>
+<%= link_to "← Embedding models", admin_embedding_models_path, class: "text-link text-sm" %>
+<%= render "shared/page_header", eyebrow: ui("Administration / Models"), title: ui("Register an embedding model"), description: ui("Declare the exact API identifier and supported dimensions advertised by the deployed inference service.") %>
+<%= render "form", model: @model %>
