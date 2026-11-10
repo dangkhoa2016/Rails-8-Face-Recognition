@@ -1,0 +1,125 @@
+@import "tailwindcss";
+@source "../../views/**/*.{erb,html}";
+@source "../../helpers/**/*.rb";
+@source "../../javascript/**/*.js";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+@layer base {
+  body { @apply bg-[#070b16] text-slate-100 antialiased; }
+  a, button, input, select, textarea { @apply transition-colors duration-150; }
+  button, select { cursor: pointer; }
+  button:disabled { @apply cursor-not-allowed opacity-45; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-cyan-300; }
+}
+
+@layer components {
+  .panel { @apply rounded-2xl border border-white/10 bg-[#11192a]/95 shadow-lg shadow-black/10; }
+  .panel-soft { @apply rounded-2xl border border-white/10 bg-white/[0.035]; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold no-underline transition duration-150; }
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold no-underline transition duration-150 bg-cyan-300 text-[#08111d] shadow-lg shadow-cyan-400/10 hover:bg-cyan-200; }
+  .btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold no-underline transition duration-150 border border-white/15 bg-white/[0.06] text-slate-100 hover:bg-white/[0.11]; }
+  .btn-danger { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold no-underline transition duration-150 border border-rose-500/40 bg-rose-500/10 text-rose-200 hover:bg-rose-500/20; }
+  .btn-quiet { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold no-underline transition duration-150 text-slate-300 hover:bg-white/5 hover:text-white; }
+  .field { @apply block w-full rounded-xl border border-white/15 bg-[#0a1120] px-4 py-3 text-sm text-slate-100 placeholder:text-slate-600 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/20; }
+  .field-label { @apply mb-2 block text-sm font-medium text-slate-200; }
+  .field-hint { @apply mt-2 text-xs leading-5 text-slate-500; }
+  .nav-link { @apply flex items-center gap-3 rounded-xl px-4 py-2.5 text-sm font-medium text-slate-400 hover:bg-white/[0.06] hover:text-white; }
+  .nav-link-active { @apply bg-cyan-400/[0.11] font-semibold text-cyan-200 ring-1 ring-cyan-400/15; }
+  .badge { @apply inline-flex h-fit max-w-full shrink-0 self-center items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold leading-5 tracking-wide; }
+  .badge-success { @apply border-emerald-400/25 bg-emerald-400/10 text-emerald-300; }
+  .badge-info { @apply border-sky-400/25 bg-sky-400/10 text-sky-300; }
+  .badge-danger { @apply border-rose-400/25 bg-rose-400/10 text-rose-300; }
+  .badge-warning { @apply border-amber-400/25 bg-amber-400/10 text-amber-300; }
+  .badge-neutral { @apply border-white/10 bg-white/5 text-slate-300; }
+  .section-kicker { @apply text-xs font-bold uppercase tracking-[.2em] text-cyan-300; }
+  .page-title { @apply mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl; }
+  .page-description { @apply mt-3 max-w-3xl text-sm leading-7 text-slate-400 sm:text-base; }
+  .table-wrap { @apply overflow-x-auto rounded-2xl border border-white/10 bg-[#11192a]; }
+  .data-table { @apply w-full min-w-[640px] text-left text-sm; }
+  .data-table th { @apply border-b border-white/10 bg-white/[0.025] px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-500; }
+  .data-table td { @apply border-b border-white/[0.06] px-5 py-4 text-slate-300; }
+  .data-table tr:last-child td { @apply border-0; }
+  .data-table tbody tr { @apply hover:bg-white/[0.025]; }
+  .detail-label { @apply text-xs font-medium uppercase tracking-wide text-slate-500; }
+  .detail-value { @apply mt-1 break-words text-sm text-slate-200; }
+  .text-link { @apply font-medium text-cyan-300 hover:text-cyan-200 hover:underline; }
+  .alert-info { @apply rounded-xl border border-cyan-400/20 bg-cyan-400/[0.07] px-4 py-3 text-sm text-cyan-100; }
+  .alert-error { @apply rounded-xl border border-rose-400/30 bg-rose-400/10 px-4 py-3 text-sm text-rose-100; }
+  .alert-warning { @apply rounded-xl border border-amber-400/25 bg-amber-400/[0.07] px-4 py-3 text-sm text-amber-100; }
+}
+
+/* Accessible light/dark/system UI. `light-dark()` follows the OS when auto. */
+:root { color-scheme: light dark; }
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+
+@layer base {
+  body { background: light-dark(#f4f7fb, #070b16); color: light-dark(#142238, #f1f5f9); }
+  .site-sidebar { background: light-dark(#fff, #0b1222); border-color: light-dark(#d9e2ed, rgba(255,255,255,.1)); }
+  .site-header { background: light-dark(rgba(255,255,255,.94), rgba(7,11,22,.85)); border-color: light-dark(#d9e2ed, rgba(255,255,255,.08)); }
+  .brand-text { color: light-dark(#15253b, #fff); }
+}
+@layer components {
+  .panel { background: light-dark(#fff, #11192a); border-color: light-dark(#dbe5ee, rgba(255,255,255,.1)); box-shadow: 0 4px 24px light-dark(rgba(15,23,42,.04), rgba(0,0,0,.12)); }
+  .panel-soft { background: light-dark(#f8fbff, rgba(255,255,255,.035)); border-color: light-dark(#dbe5ee, rgba(255,255,255,.1)); }
+  .btn-secondary { background: light-dark(#edf4fa, rgba(255,255,255,.06)); color: light-dark(#1e3a53, #f1f5f9); border-color: light-dark(#c6d8e7, rgba(255,255,255,.15)); }
+  .btn-secondary:hover { background: light-dark(#dcebf4, rgba(255,255,255,.11)); }
+  .btn-quiet { color: light-dark(#0e7490, #cbd5e1); }
+  .field, .toolbar-select { background: light-dark(#fff, #0a1120); color: light-dark(#142238, #f1f5f9); border-color: light-dark(#bdcedd, rgba(255,255,255,.15)); }
+  .toolbar-select { @apply max-w-[140px] rounded-lg border px-2 py-2 text-xs sm:text-sm; }
+  .field-label { color: light-dark(#334155, #e2e8f0); }
+  .field-hint, .page-description { color: light-dark(#475569, #94a3b8); }
+  .nav-link { color: light-dark(#475569, #94a3b8); }
+  .nav-link:hover { background: light-dark(#eef6fb, rgba(255,255,255,.06)); color: light-dark(#0e7490, #fff); }
+  .nav-link-active { background: light-dark(#cffafe, rgba(34,211,238,.11)); color: light-dark(#155e75, #a5f3fc); }
+  .page-title { color: light-dark(#0f172a, #fff); }
+  .table-wrap { background: light-dark(#fff, #11192a); border-color: light-dark(#dbe5ee, rgba(255,255,255,.1)); }
+  .data-table th { background: light-dark(#f1f5f9, rgba(255,255,255,.025)); border-color: light-dark(#e2e8f0, rgba(255,255,255,.1)); color: light-dark(#475569, #64748b); }
+  .data-table td { color: light-dark(#334155, #cbd5e1); border-color: light-dark(#e2e8f0, rgba(255,255,255,.06)); }
+  .data-table tbody tr:hover { background: light-dark(#f8fafc, rgba(255,255,255,.025)); }
+  .detail-label { color: light-dark(#475569, #64748b); }
+  .detail-value { color: light-dark(#1e293b, #e2e8f0); }
+  .text-link { color: light-dark(#0e7490, #67e8f9); }
+  .badge-neutral { background: light-dark(#eef2f7, rgba(255,255,255,.05)); color: light-dark(#334155, #cbd5e1); }
+  .badge-warning { color: light-dark(#92400e, #fcd34d); }
+  .badge-success { color: light-dark(#047857, #6ee7b7); }
+  .badge-info { color: light-dark(#0369a1, #7dd3fc); }
+  .badge-danger { color: light-dark(#be123c, #fda4af); }
+  .alert-info { color: light-dark(#155e75, #cffafe); }
+  .alert-error { color: light-dark(#9f1239, #ffe4e6); }
+  .alert-warning { color: light-dark(#92400e, #fef3c7); }
+}
+/* Compatibility for legacy Tailwind utilities used throughout the 46 ERB screens. */
+@layer utilities {
+  .text-white { color: light-dark(#0f172a, #fff); }
+  .text-slate-100 { color: light-dark(#17243a, #f1f5f9); }
+  .text-slate-200 { color: light-dark(#273c55, #e2e8f0); }
+  .text-slate-300 { color: light-dark(#334155, #cbd5e1); }
+  .text-slate-400 { color: light-dark(#475569, #94a3b8); }
+  .text-slate-500 { color: light-dark(#64748b, #64748b); }
+  .text-slate-600 { color: light-dark(#64748b, #475569); }
+  .text-cyan-300 { color: light-dark(#0e7490, #67e8f9); }
+  .text-rose-200 { color: light-dark(#be123c, #fecdd3); }
+  .bg-slate-900 { background-color: light-dark(#fff, #0f172a); }
+  .bg-slate-950 { background-color: light-dark(#f8fafc, #020617); }
+  .border-slate-700, .border-slate-800 { border-color: light-dark(#cbd5e1, #334155); }
+}
+/* Hero and primary buttons intentionally retain contrast on their gradients. */
+.hero { color: #f8fafc; }
+.hero .text-white { color: #fff; }
+.hero .text-slate-300 { color: #cbd5e1; }
+.btn-primary, .btn-primary .text-slate-950 { color: #08111d; }
+
+/* Additional contrast fixes for the light theme. */
+@layer components {
+  .btn-danger { color: light-dark(#9f1239, #fecdd3); }
+  .btn-danger:hover { background: light-dark(#ffe4e6, rgba(244,63,94,.2)); }
+  .section-kicker { color: light-dark(#155e75, #67e8f9); }
+}
+@layer utilities {
+  .text-cyan-200 { color: light-dark(#0e7490, #a5f3fc); }
+  .text-cyan-100 { color: light-dark(#155e75, #cffafe); }
+}
