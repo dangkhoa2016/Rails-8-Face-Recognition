@@ -1,0 +1,31 @@
+<% content_for :title, "#{t('resets.title')} · Rails 8 Face Recognition" %>
+<%= render 'shared/page_header', eyebrow: t('resets.eyebrow'), title: t('resets.title'), description: t('resets.description') %>
+<div class="mt-8 grid gap-6 lg:grid-cols-2">
+  <section class="panel p-7"><h2 class="text-xl font-semibold"><%= t('resets.mine_title') %></h2><p class="page-description"><%= t('resets.mine_detail') %></p>
+    <%= form_with url: data_resets_path, class: 'mt-6 space-y-4' do |f| %>
+      <%= f.hidden_field :scope, value: 'mine' %>
+      <%= f.label :confirmation, t('resets.type_mine'), class: 'field-label' %>
+      <%= f.text_field :confirmation, class: 'field', required: true, autocomplete: 'off', placeholder: 'RESET MY DATA' %>
+      <%= f.submit t('resets.reset_mine'), class: 'btn-danger w-full', data: { turbo_confirm: t('resets.warning') } %>
+    <% end %></section>
+  <% if current_user.admin? %>
+    <section class="panel p-7 border-rose-500/30"><h2 class="text-xl font-semibold"><%= t('resets.all_title') %></h2><p class="page-description"><%= t('resets.all_detail') %></p>
+    <%= form_with url: data_resets_path, class: 'mt-6 space-y-4' do |f| %>
+      <%= f.hidden_field :scope, value: 'all_test_activity' %>
+      <%= f.label :confirmation, t('resets.type_all'), class: 'field-label' %>
+      <%= f.text_field :confirmation, class: 'field', required: true, autocomplete: 'off', placeholder: 'RESET ALL TEST DATA' %>
+      <%= f.submit t('resets.reset_all'), class: 'btn-danger w-full', data: { turbo_confirm: t('resets.warning') } %>
+    <% end %></section>
+    <section class="panel p-7 border-amber-500/30"><h2 class="text-xl font-semibold"><%= t('resets.probe_title') %></h2><p class="page-description"><%= t('resets.probe_detail') %></p>
+      <%= form_with url: data_resets_path, class: 'mt-6 space-y-4' do |f| %>
+        <%= f.hidden_field :scope, value: 'probe_cache' %>
+        <%= f.label :confirmation, t('resets.type_probe'), class: 'field-label' %>
+        <%= f.text_field :confirmation, class: 'field', required: true, autocomplete: 'off', placeholder: 'RESET PROBE CACHE' %>
+        <%= f.submit t('resets.reset_probe'), class: 'btn-danger w-full', data: { turbo_confirm: t('resets.warning') } %>
+      <% end %></section>
+  <% end %>
+</div>
+<section class="panel mt-8 p-7"><h2 class="text-xl font-semibold"><%= t('resets.history') %></h2>
+<% if @resets.any? %><div class="table-wrap mt-5"><table class="data-table"><thead><tr><th><%= t('resets.scope') %></th><th><%= t('resets.status') %></th><th><%= t('resets.created') %></th><th><%= t('common.details') %></th></tr></thead><tbody>
+<% @resets.each do |item| %><tr><td><%= t("resets.scope_#{item.scope}") %></td><td><%= status_badge(item.status) %></td><td><%= short_time(item.created_at) %></td><td><%= link_to t('common.details'), data_reset_path(item), class: 'text-link' %></td></tr><% end %>
+</tbody></table></div><% else %><p class="page-description"><%= t('resets.empty') %></p><% end %></section>

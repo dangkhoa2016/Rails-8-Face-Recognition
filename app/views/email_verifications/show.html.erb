@@ -1,0 +1,10 @@
+<% content_for :title, "#{t('auth.verify_email')} · Rails 8 Face Recognition" %>
+<div class="mx-auto max-w-lg panel p-8"><h1 class="page-title"><%= t('auth.verify_email') %></h1>
+  <% if @valid %>
+    <p class="page-description"><%= t('auth.verify_intro') %></p>
+    <%= button_to t('auth.verify_submit'), email_verification_path, method: :post, params: { token: @token }, class: 'btn-primary mt-7 w-full' %>
+  <% else %>
+    <p class="alert-warning mt-6"><%= t('auth.link_expired') %></p>
+    <%= link_to t('auth.resend_verification'), new_verification_email_path, class: 'btn-secondary mt-5' %>
+  <% end %>
+</div>

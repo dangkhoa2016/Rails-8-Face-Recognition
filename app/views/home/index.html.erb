@@ -1,0 +1,24 @@
+<% content_for :title, "#{ui('Overview')} · Rails 8 Face Recognition" %>
+<div class="hero relative overflow-hidden rounded-[28px] border border-cyan-300/10 bg-gradient-to-br from-[#142844] via-[#0b1529] to-[#11122e] px-7 py-10 sm:px-11 sm:py-14">
+  <div class="pointer-events-none absolute -right-24 -top-36 h-96 w-96 rounded-full bg-cyan-400/10 blur-3xl" aria-hidden="true"></div>
+  <div class="relative max-w-3xl">
+    <span class="badge badge-info"><%= ui('CompactFaces · Synthetic identity research') %></span>
+    <h1 class="mt-6 text-4xl font-semibold leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-6xl"><%= ui('Understand identity signals.') %> <span class="text-cyan-300"><%= ui('Respect uncertainty.') %></span></h1>
+    <p class="mt-6 max-w-2xl text-base leading-8 text-slate-300"><%= ui('A privacy-first workspace for experimental 1:N face identification across 120 synthetic Core identities, model-specific embedding profiles and explicit unknown rejection.') %></p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <% if current_user %><%= link_to ui("Explore samples →"), samples_path, class: "btn-primary" %><%= link_to ui("Try recognition"), new_recognition_attempt_path, class: "btn-secondary" %><% else %><%= link_to ui("Sign in to workspace →"), sign_in_path, class: "btn-primary" %><% end %>
+      <%= link_to ui("How it works"), about_path, class: "btn-quiet" %>
+    </div>
+  </div>
+</div>
+<div class="mt-7 grid gap-4 sm:grid-cols-3">
+  <%= card_metric "#{@identity_count}/120", ui("Core identities"), ui("Exactly one SOURCE enrollment per identity") %>
+  <%= card_metric @sample_count, ui("Available probes"), ui("Never included in the enrollment gallery") %>
+  <%= card_metric(@active_profile ? "#{@active_profile.dimension}D" : ui("Inactive"), ui("Active dimension"), @active_profile ? @active_profile.embedding_model.display_name : ui("Requires complete coverage and approved policy")) %>
+</div>
+<section class="mt-10 grid gap-5 lg:grid-cols-3" aria-label="<%= ui('How the pipeline works') %>">
+  <% [["01", ui("Private data"), ui("Reference data remains separate from expiring user submissions; image previews require authorization.")], ["02", ui("Immutable profiles"), ui("Each model, revision, instruction, preprocessing version and dimension has an independent embedding cache.")], ["03", ui("Evidence-led results"), ui("Similarity is a numeric signal, not probability. Recognition decisions depend on reviewed, profile-specific calibration.")]].each do |number, title, description| %>
+    <div class="panel p-7"><p class="section-kicker"><%= number %> <%= ui('/ Workflow') %></p><h2 class="mt-5 text-lg font-semibold"><%= title %></h2><p class="mt-3 text-sm leading-7 text-slate-400"><%= description %></p></div>
+  <% end %>
+</section>
+<div class="alert-warning mt-9"><%= ui('This interface is an experimental research tool. Quality on synthetic faces has not established real-world biometric accuracy; it must not be used for consequential identity decisions.') %></div>
