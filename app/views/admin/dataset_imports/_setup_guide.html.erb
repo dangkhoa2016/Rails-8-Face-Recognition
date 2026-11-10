@@ -1,0 +1,28 @@
+<details class="mt-5 rounded-2xl border border-cyan-300/15 bg-slate-900/50 p-5" data-testid="dataset-setup-guide" <%= "open" unless @metadata_ready %>>
+  <summary class="cursor-pointer text-sm font-semibold text-cyan-200"><%= t('dataset_setup.guide_title') %></summary>
+  <p class="mt-4 text-sm leading-6 text-slate-300"><%= t('dataset_setup.introduction') %></p>
+  <ol class="mt-5 list-decimal space-y-5 pl-5 text-sm leading-6 text-slate-300">
+    <li>
+      <p class="font-semibold text-slate-100"><%= t('dataset_setup.download_title') %></p>
+      <p class="mt-1 text-xs leading-5 text-slate-400"><%= t('dataset_setup.download_note') %></p>
+      <pre class="mt-2 overflow-x-auto rounded-xl border border-white/10 bg-slate-950 p-3 text-xs leading-6 text-slate-200"><code>hf download dangkhoa2016/compactfaces-synthetic-face-dataset --repo-type dataset --local-dir /content/krw-workspace/compactfaces-dataset</code></pre>
+      <%= link_to t('dataset_setup.dataset_link'), 'https://huggingface.co/datasets/dangkhoa2016/compactfaces-synthetic-face-dataset', target: '_blank', rel: 'noopener noreferrer', class: 'text-link mt-2 inline-block text-xs' %>
+    </li>
+    <li>
+      <p class="font-semibold text-slate-100"><%= t('dataset_setup.verify_title') %></p>
+      <pre class="mt-2 overflow-x-auto rounded-xl border border-white/10 bg-slate-950 p-3 text-xs leading-6 text-slate-200"><code>test -f /content/krw-workspace/compactfaces-dataset/data/train/metadata.csv
+find /content/krw-workspace/compactfaces-dataset/data/train/images -type f -name '*.png' | wc -l</code></pre>
+      <p class="mt-2 text-xs leading-5 text-slate-400"><%= t('dataset_setup.verify_note') %></p>
+    </li>
+    <li>
+      <p class="font-semibold text-slate-100"><%= t('dataset_setup.env_title') %></p>
+      <pre class="mt-2 overflow-x-auto rounded-xl border border-white/10 bg-slate-950 p-3 text-xs leading-6 text-slate-200"><code>DATASET_IMPORT_ROOT=/content/krw-workspace/compactfaces-dataset bin/dev</code></pre>
+      <p class="mt-2 text-xs leading-5 text-slate-400"><%= t('dataset_setup.env_note') %></p>
+    </li>
+    <li>
+      <p class="font-semibold text-slate-100"><%= t('dataset_setup.finish_title') %></p>
+      <p class="mt-1 text-xs leading-5 text-slate-400"><%= t('dataset_setup.finish_note') %></p>
+    </li>
+  </ol>
+  <p class="mt-5 border-t border-white/10 pt-4 text-xs leading-5 text-slate-400"><%= t('dataset_setup.privacy_note') %></p>
+</details>

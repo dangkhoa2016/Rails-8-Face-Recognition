@@ -1,0 +1,23 @@
+<% content_for :title, "Admin Dashboard · Rails 8 Face Recognition" %>
+<%= render "shared/page_header", eyebrow: ui("Administration / Overview"), title: ui("Operations dashboard"), description: ui("Live enrollment coverage, model readiness and processing health. No quality benchmark is performed in Rails.") %>
+<div class="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+  <%= card_metric "#{@identities}/120", ui("Active Core identities"), ui("Synthetic dataset reference population") %>
+  <%= card_metric "#{@enrolled}/120", ui("SOURCE enrollments"), ui("Only these enter the recognition gallery") %>
+  <%= card_metric @samples, ui("Probe samples"), ui("Core variants and Additional identities") %>
+  <%= card_metric @failures, ui("Failed embedding requests"), "#{@pending} queued or processing" %>
+</div>
+<div class="mt-6 grid gap-6 xl:grid-cols-[1.1fr_.9fr]">
+  <section class="panel p-7"><div class="flex items-center justify-between gap-3"><h2 class="text-xl font-semibold"><%= ui('Active recognition') %></h2><%= link_to ui("Manage profiles →"), admin_embedding_profiles_path, class: "text-link text-sm" %></div>
+    <% if @setting.active_recognition_profile %>
+      <div class="mt-6 rounded-xl border border-emerald-400/20 bg-emerald-400/[0.06] p-5"><%= status_badge "ready" %><h3 class="mt-4 text-2xl font-semibold"><%= @setting.active_recognition_profile.embedding_model.display_name %></h3><p class="mt-2 text-sm text-slate-300"><%= @setting.active_recognition_profile.dimension %> <%= ui('dimensions · revision') %> <%= short_sha(@setting.active_recognition_profile.model_revision) %></p><p class="mt-2 text-xs text-slate-500"><%= ui('Approved policy #') %><%= @setting.active_recognition_policy_id %> <%= ui('· activated') %> <%= short_time(@setting.activated_at) %></p></div>
+    <% else %>
+      <div class="alert-warning mt-5"><strong><%= ui('Recognition disabled.') %></strong> <%= ui('Activate a profile only after 120/120 SOURCE embeddings are ready and an independent evaluation policy has been approved.') %></div>
+    <% end %>
+    <div class="mt-6 grid grid-cols-2 gap-3"><%= link_to ui("Dataset imports"), admin_dataset_imports_path, class: "btn-secondary" %><%= link_to ui("Recognition policies"), admin_recognition_policies_path, class: "btn-secondary" %></div>
+  </section>
+  <section class="panel p-7"><div class="flex justify-between"><h2 class="text-xl font-semibold"><%= ui('Recent embedding profiles') %></h2><%= link_to ui("All profiles →"), admin_embedding_profiles_path, class: "text-link text-sm" %></div><% if @profiles.any? %><div class="mt-4 space-y-3"><% @profiles.each do |profile| %><%= link_to admin_embedding_profile_path(profile), class: "flex items-center justify-between gap-4 rounded-xl border border-white/[0.07] p-4 hover:bg-white/5" do %><div><p class="text-sm font-semibold text-white"><%= profile.embedding_model.display_name %> · <%= profile.dimension %>D</p><p class="mt-1 text-xs text-slate-500"><%= profile.available_enrollments %>/<%= profile.required_enrollments %> <%= ui('enrollment vectors') %></p></div><%= status_badge profile.status %><% end %><% end %></div><% else %><p class="mt-5 text-sm text-slate-500"><%= ui('No profiles have been defined.') %></p><% end %></section>
+</div>
+<div class="mt-6 grid gap-6 xl:grid-cols-2">
+  <section class="panel p-7"><h2 class="text-xl font-semibold"><%= ui('Dataset activity') %></h2><% if @imports.any? %><div class="mt-5 space-y-3"><% @imports.each do |item| %><div class="flex items-center justify-between gap-3"><%= link_to "#{item.dataset_version} · ##{item.id}", admin_dataset_import_path(item), class: "text-link text-sm" %><%= status_badge item.import_status %></div><% end %></div><% else %><p class="mt-4 text-sm text-slate-500"><%= ui('No dataset snapshot has been imported.') %></p><% end %><%= link_to ui("Review sources →"), admin_dataset_imports_path, class: "text-link mt-5 inline-block text-sm" %></section>
+  <section class="panel p-7"><h2 class="text-xl font-semibold"><%= ui('Recent recognition activity') %></h2><% if @attempts.any? %><div class="mt-5 space-y-3"><% @attempts.each do |a| %><div class="flex items-center justify-between gap-3 text-sm"><span class="text-slate-300"><%= ui('Attempt #') %><%= a.id %> <span class="text-slate-500">· <%= short_time(a.created_at) %></span></span><%= status_badge a.decision %></div><% end %></div><% else %><p class="mt-4 text-sm text-slate-500"><%= ui('No recognition requests yet.') %></p><% end %></section>
+</div>

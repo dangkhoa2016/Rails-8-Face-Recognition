@@ -1,0 +1,17 @@
+<% content_for :title, "Dataset Import ##{@dataset_import.id} · Rails 8 Face Recognition" %>
+<%= link_to "← Dataset imports", admin_dataset_imports_path, class: "text-link text-sm" %>
+<div class="mt-5 flex flex-wrap justify-between gap-4"><div><p class="section-kicker"><%= ui('Administration / Dataset') %></p><h1 class="page-title"><%= ui('Import #') %><%= @dataset_import.id %></h1><p class="page-description"><%= @dataset_import.source_name %> · <%= @dataset_import.dataset_version %></p></div><%= status_badge(@dataset_import.import_status) %></div>
+<% if @dataset_import.import_status.in?(%w[verifying importing]) %><div class="alert-info mt-6" data-controller="poll" data-poll-interval-value="7000"><%= ui('Verification or import is running. This page refreshes periodically while work is in progress.') %></div><% end %>
+<div class="mt-8 grid gap-4 sm:grid-cols-3"><%= card_metric @dataset_import.verified_file_count, ui("Files verified"), ui("Expected: 935 source PNGs") %><%= card_metric @counts.fetch(["core", "enrollment"], 0), ui("SOURCE enrolled"), ui("Expected: 120 Core identities") %><%= card_metric @counts.values.sum, ui("Images imported"), ui("Core and Additional data") %></div>
+<div class="mt-6 grid gap-6 lg:grid-cols-2"><section class="panel space-y-5 p-7"><h2 class="text-lg font-semibold"><%= ui('Snapshot provenance') %></h2><div><p class="detail-label"><%= ui('Source URL') %></p><p class="detail-value break-all"><%= @dataset_import.source_url %></p></div><div><p class="detail-label"><%= ui('Metadata SHA-256') %></p><p class="detail-value break-all font-mono text-xs"><%= @dataset_import.manifest_sha256 || ui("Not verified") %></p></div><div><p class="detail-label"><%= ui('Started / finished') %></p><p class="detail-value"><%= short_time(@dataset_import.started_at) %> · <%= short_time(@dataset_import.finished_at) %></p></div><% if @dataset_import.error_summary.present? %><div class="alert-error"><%= @dataset_import.error_summary %></div><% end %></section>
+<section class="panel p-7"><h2 class="text-lg font-semibold"><%= ui('Import actions') %></h2><p class="mt-3 text-sm leading-7 text-slate-400"><%= ui('The importer reads only a locally configured dataset root, verifies metadata and each PNG SHA-256, then records exactly one Core SOURCE enrollment per Core identity. Re-running uses the same dataset import and skips existing verified attachments.') %></p>
+<% if @root_path.blank? %>
+  <div class="alert-warning mt-5" role="status"><%= t('dataset_setup.not_configured') %></div>
+<% elsif !@metadata_ready %>
+  <div class="alert-warning mt-5" role="status"><%= t('dataset_setup.invalid_root') %> <code class="break-all"><%= @root_path %></code></div>
+<% else %>
+  <div class="alert-info mt-5" role="status"><%= t('dataset_setup.ready') %> <code class="break-all"><%= @root_path %></code></div>
+<% end %>
+<%= render 'setup_guide' %>
+<% if @dataset_import.import_status.in?(%w[pending failed completed]) %><%= button_to @dataset_import.import_status == "completed" ? ui("Verify / import again") : ui("Verify and import"), verify_and_import_admin_dataset_import_path(@dataset_import), method: :post, class: "btn-primary mt-5", disabled: !@metadata_ready, form: { data: { turbo_confirm: ui("Verify all 935 source files and import records from the trusted dataset root? This may upload reference images to private storage.") } } %><% end %>
+</section></div>
