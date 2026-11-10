@@ -1,0 +1,13 @@
+<% content_for :title, "New Submission · Rails 8 Face Recognition" %>
+<%= render "shared/page_header", eyebrow: ui("Workspace / Private upload"), title: ui("Upload an authorized face image"), description: ui("The input should already contain one cropped face. This application does not perform or guarantee face detection or alignment.") %>
+<div class="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
+  <div class="panel p-6 sm:p-8">
+    <% if @error_message %><div class="alert-error mb-6"><%= @error_message %></div><% end %>
+    <%= form_with url: submissions_path, multipart: true, class: "space-y-6" do |f| %>
+      <div><%= f.label :image, ui("Face image"), class: "field-label" %><%= f.file_field :image, required: true, accept: "image/png,image/jpeg,image/webp", class: "field file:mr-4 file:rounded-lg file:border-0 file:bg-cyan-400/10 file:px-3 file:py-2 file:font-semibold file:text-cyan-300" %><p class="field-hint"><%= ui('PNG, JPEG or WebP · 5 MiB maximum · 12 megapixels maximum · one pre-cropped face.') %></p></div>
+      <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm leading-6 text-slate-300"><%= check_box_tag :consent, "1", false, required: true, class: "mt-1 h-4 w-4 accent-cyan-300" %><span><%= ui('I confirm I own this image or have all necessary rights and consent to upload and process it for this research comparison.') %></span></label>
+      <div class="flex flex-wrap gap-3"><%= f.submit ui("Upload privately"), class: "btn-primary", data: { turbo_submits_with: ui("Uploading…") } %><%= link_to ui("Cancel"), submissions_path, class: "btn-secondary" %></div>
+    <% end %>
+  </div>
+  <aside class="panel-soft p-6"><h2 class="font-semibold"><%= ui('Your privacy controls') %></h2><ul class="mt-4 list-inside list-disc space-y-3 text-sm leading-6 text-slate-400"><li><%= ui('Uploads are private and only visible to your account.') %></li><li><%= ui('Automatically eligible for deletion after 24 hours.') %></li><li><%= ui('Immediate manual deletion from My submissions.') %></li><li><%= ui('Never added to the 120 Core identities or model training data.') %></li></ul><%= link_to ui("Read privacy policy →"), privacy_path, class: "text-link mt-5 inline-block text-sm" %></aside>
+</div>
