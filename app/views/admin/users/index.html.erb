@@ -1,0 +1,11 @@
+<% content_for :title, "#{t('users.title')} · Rails 8 Face Recognition" %>
+<%= render 'shared/page_header', eyebrow: t('nav.admin'), title: t('users.title'), description: t('users.description') %>
+<div class="table-wrap mt-8"><table class="data-table"><thead><tr><th><%= t('auth.email') %></th><th><%= t('users.role') %></th><th><%= t('users.verification') %></th><th><%= t('users.status') %></th><th><%= t('users.actions') %></th></tr></thead><tbody>
+<% @users.each do |user| %><tr><td><%= user.email %><% if user.id == current_user.id %> (<%= t('users.you') %>)<% end %></td><td><%= t("users.role_#{user.role}") %></td><td><%= user.verified? ? t('users.verified') : t('users.unverified') %></td><td><%= user.enabled? ? t('users.enabled') : t('users.disabled') %></td><td><div class="flex flex-wrap gap-2">
+  <% if user.id != current_user.id %>
+    <%= button_to t(user.enabled? ? 'users.suspend' : 'users.activate'), admin_user_path(user), method: :patch, params: { operation: user.enabled? ? 'suspend' : 'activate' }, class: 'btn-secondary text-xs', form: { data: { turbo_confirm: t('users.confirm') } } %>
+    <%= button_to t(user.admin? ? 'users.demote' : 'users.promote'), admin_user_path(user), method: :patch, params: { operation: user.admin? ? 'demote' : 'promote' }, class: 'btn-secondary text-xs', form: { data: { turbo_confirm: t('users.confirm') } } %>
+  <% end %>
+  <%= button_to t('users.revoke'), admin_user_path(user), method: :patch, params: { operation: 'revoke_sessions' }, class: 'btn-secondary text-xs', form: { data: { turbo_confirm: t('users.confirm') } } %>
+</div></td></tr><% end %>
+</tbody></table></div>
