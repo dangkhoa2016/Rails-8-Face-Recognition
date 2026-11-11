@@ -1,0 +1,14 @@
+# Implementation notes and validation boundary
+
+> 🌐 Language / Ngôn ngữ: **English** | [Tiếng Việt](implementation-notes.vi.md)
+
+This repository now includes end-to-end **source code paths** for the core admin/member workflows. GitHub Actions subsequently validated Rails/PostgreSQL/pgvector migrations, 45 Rails tests, 4 browser system tests, Brakeman, RuboCop and Tailwind CSS. Those results cover offline application behavior, **not** live GPU inference, R2 credentials or transactional email delivery.
+
+1. **Dependency lock:** `Gemfile.lock` is generated on Ruby 3.3 and committed for reproducible dependency resolution. CI uses Bundler caching against this lock; assess new versions and security advisories separately before upgrades.
+2. **Dataset:** importer expects the documented `data/train/metadata.csv` (alternative snapshot locations supported), all 935 PNG files and expected columns. Its checksum/integrity checks do **not** establish real biometric identity consistency. Validate a real downloaded dataset snapshot, including file sizes and 1024×1024 dimensions. Inference refuses oversized source bytes; if any source PNG exceeds 5 MiB, a separately reviewed deterministic preprocessing stage is still needed.
+3. **R2:** both buckets need provisioning, private permissions, lifecycle tests and deletion/backup verification. No signed public object links are exposed by Rails views. Default blob routes are disabled.
+4. **Modal:** exact pinned model revisions, preprocessing versions, instruction defaults, supported dimensions, and response `config_sha256` must be verified through the actual deployment. Tokens must remain in the server environment, with a strict `INFERENCE_ALLOWED_HOSTS` value. A live inference endpoint has not yet been qualified in this project.
+5. **Background jobs:** Solid Queue worker is wired in development and production. Verify scheduler, throughput, retry limits, job exits, and budget controls on deployment. The runtime server and background worker both require the same secret configuration.
+6. **Quality & ethics:** the independent benchmark notebook supplies calibration evidence. Approval in the Rails admin UI is an operator assertion backed by a reference/hash, not an automated authenticity check of the notebook's scientific results. Do not treat a score as a probability or enable consequential use.
+7. **Security & privacy:** do production hardening for backup deletion, audit retention, rate limits across server instances, image antivirus/decoder behavior, concurrency, regulatory requirements and explicit consent verification before deployment.
+8. **Tests:** Rails migrations, Ruby tests and Chrome system tests passed in GitHub CI. Live R2, Modal and transactional SMTP checks remain external acceptance work. Devise/Warden now authenticates users while rate limits remain in PostgreSQL.
