@@ -1,0 +1,39 @@
+name: Bug report / Báo lỗi
+description: Report a reproducible Rails application issue / Báo cáo lỗi ứng dụng Rails có thể tái lập
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please remove user images, secrets and personal information before submitting.
+        Vui lòng xóa ảnh người dùng, secrets và dữ liệu cá nhân trước khi gửi.
+  - type: input
+    id: commit
+    attributes:
+      label: Git SHA / Mã commit
+    validations:
+      required: true
+  - type: input
+    id: runtime
+    attributes:
+      label: Ruby / Rails / PostgreSQL versions
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce / Các bước tái lập
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs actual / Mong đợi và thực tế
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized logs / Log đã loại thông tin nhạy cảm
+      description: No email tokens, passwords, private faces or bearer keys / Không đăng token email, mật khẩu, ảnh riêng tư hoặc bearer keys

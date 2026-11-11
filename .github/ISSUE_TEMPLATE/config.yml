@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security / Bảo mật
+    url: https://github.com/dangkhoa2016/Rails-8-Face-Recognition/blob/main/.github/SECURITY.md
+    about: Report security issues privately / Báo cáo lỗ hổng riêng tư

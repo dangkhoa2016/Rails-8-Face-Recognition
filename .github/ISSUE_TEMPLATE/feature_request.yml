@@ -1,0 +1,21 @@
+name: Feature request / Đề xuất tính năng
+description: Propose a change with security and data-model impact / Đề xuất có phân tích bảo mật và mô hình dữ liệu
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / Vấn đề
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: Proposed design / Thiết kế đề xuất
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Privacy, data, authentication, and cost impact / Ảnh hưởng quyền riêng tư, dữ liệu, xác thực và chi phí
